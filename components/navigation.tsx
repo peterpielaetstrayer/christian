@@ -53,13 +53,13 @@ export function Navigation() {
 
           <div className="flex items-center gap-4 border-l border-border pl-6">
             <a
-              href="tel:+1234567890"
+              href="tel:+15035551234"
               className="text-sm text-muted-foreground transition-colors hover:text-accent"
             >
               Call / Text
             </a>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:build@namebuild.com"
               className="text-sm text-muted-foreground transition-colors hover:text-accent"
             >
               Email
@@ -110,14 +110,14 @@ export function Navigation() {
             </Link>
             <div className="flex items-center gap-4 border-t border-border pt-4">
               <a
-                href="tel:+1234567890"
+                href="tel:+15035551234"
                 className="text-sm text-muted-foreground transition-colors hover:text-accent"
               >
                 Call / Text
               </a>
               <span className="text-muted-foreground">·</span>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:build@namebuild.com"
                 className="text-sm text-muted-foreground transition-colors hover:text-accent"
               >
                 Email

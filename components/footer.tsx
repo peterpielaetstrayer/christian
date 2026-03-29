@@ -5,14 +5,14 @@ export function Footer() {
         <div className="flex flex-col items-center justify-center gap-6 text-center">
           <div className="flex items-center gap-6">
             <a
-              href="tel:+1234567890"
+              href="tel:+15035551234"
               className="text-sm text-muted-foreground transition-colors hover:text-accent"
             >
               Call / Text
             </a>
             <span className="text-muted-foreground">·</span>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:build@namebuild.com"
               className="text-sm text-muted-foreground transition-colors hover:text-accent"
             >
               Email

@@ -110,14 +110,14 @@ export default function Home() {
               </p>
               <div className="flex items-center justify-center gap-6">
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+15035551234"
                   className="text-lg text-secondary transition-colors hover:text-accent"
                 >
                   Call / Text
                 </a>
                 <span className="text-muted-foreground">·</span>
                 <a
-                  href="mailto:contact@example.com"
+                  href="mailto:build@namebuild.com"
                   className="text-lg text-secondary transition-colors hover:text-accent"
                 >
                   Email

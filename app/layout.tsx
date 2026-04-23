@@ -16,9 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'NAME / BUILD — Craft-forward building',
-  description: 'High-end framing, complex structural work, and clean finishes. Precision execution for craft-focused projects.',
-  generator: 'v0.app',
+  title: 'Pielaet Construction — High-end framing and structural work',
+  description:
+    'High-end framing and structural work. Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.',
   icons: {
     icon: [
       {

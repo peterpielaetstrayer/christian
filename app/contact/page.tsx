@@ -31,40 +31,40 @@ export default function ContactPage() {
     <>
       <Navigation />
       
-      <main className="mx-auto max-w-3xl px-6 py-20 md:py-24">
-        <h1 className="mb-6 font-serif text-4xl text-foreground md:text-5xl">
+      <main className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+        <h1 className="mb-5 font-serif text-3xl text-foreground sm:text-4xl md:mb-6 md:text-5xl">
           Start with the scope.
         </h1>
 
-        <p className="mb-12 text-lg leading-relaxed text-secondary">
+        <p className="mb-10 text-base leading-relaxed text-secondary sm:mb-12 sm:text-lg">
           Share drawings, photos, or a problem description.
           <br />
           Text preferred. Calls are fine too.
         </p>
 
         {/* Direct Contact Links */}
-        <div className="mb-16 flex flex-col gap-6 border-b border-border pb-12 md:flex-row md:items-center">
+        <div className="mb-12 flex flex-col gap-3 border-b border-border pb-10 sm:mb-16 sm:gap-6 sm:pb-12 md:flex-row md:items-center">
           <a
             href="tel:+18056513637"
-            className="text-lg text-foreground transition-colors hover:text-accent"
+            className="min-h-11 py-2 text-base text-foreground transition-colors hover:text-accent sm:text-lg"
           >
             (805) 651-3637
           </a>
           <span className="hidden text-muted-foreground md:inline">·</span>
           <a
             href="mailto:pielaetbuilt@gmail.com"
-            className="text-lg text-foreground transition-colors hover:text-accent"
+            className="min-h-11 py-2 text-base text-foreground transition-colors hover:text-accent sm:text-lg"
           >
             pielaetbuilt@gmail.com
           </a>
         </div>
 
-        <p className="mb-12 text-base leading-relaxed text-secondary">
+        <p className="mb-10 text-sm leading-relaxed text-secondary sm:mb-12 sm:text-base">
           Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.
         </p>
 
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-7 sm:space-y-8">
           <div className="space-y-2">
             <label htmlFor="name" className="block text-sm font-medium text-foreground">
               Name
@@ -75,7 +75,7 @@ export default function ContactPage() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none"
+              className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
               placeholder="Your name"
               required
             />
@@ -91,7 +91,7 @@ export default function ContactPage() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none"
+              className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
               placeholder="your.email@example.com"
               required
             />
@@ -107,7 +107,7 @@ export default function ContactPage() {
               value={formData.message}
               onChange={handleChange}
               rows={6}
-              className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none"
+              className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
               placeholder="Describe your project, share scope details, or ask a question..."
               required
             />
@@ -115,7 +115,7 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="border border-foreground bg-transparent px-8 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+            className="w-full border border-foreground bg-transparent px-8 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto"
           >
             Send Message
           </button>

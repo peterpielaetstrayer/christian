@@ -11,22 +11,24 @@ export default function WorkPage() {
     <>
       <Navigation />
       
-      <main className="mx-auto max-w-7xl px-6 py-20 md:py-24">
-        <div className="mb-16 max-w-3xl">
-          <h1 className="mb-6 font-serif text-4xl text-foreground md:text-5xl">Work</h1>
-          <p className="text-lg leading-relaxed text-secondary">
+      <main className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <div className="mb-12 max-w-3xl md:mb-16">
+          <h1 className="mb-5 font-serif text-3xl text-foreground sm:text-4xl md:mb-6 md:text-5xl">
+            Work
+          </h1>
+          <p className="text-base leading-relaxed text-secondary sm:text-lg">
             A selection of framing, structural, and finish work.
             <br />
             Executed with precision and attention to long-term durability.
           </p>
         </div>
 
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
           {projects.map((project) => (
             <Link 
               key={project.slug} 
               href={`/work/${project.slug}`}
-              className="group"
+              className="group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <ProjectImage
                 ratio="3/2"
@@ -35,8 +37,8 @@ export default function WorkPage() {
                 sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
                 className="transition-opacity group-hover:opacity-90"
               />
-              <div className="mt-6 space-y-2">
-                <h2 className="font-serif text-xl text-foreground transition-colors group-hover:text-accent">
+              <div className="mt-5 space-y-2">
+                <h2 className="font-serif text-lg text-foreground transition-colors group-hover:text-accent sm:text-xl">
                   {project.title}
                 </h2>
                 <p className="text-sm text-muted-foreground">

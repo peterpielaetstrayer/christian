@@ -43,7 +43,13 @@ export function ProjectImage({
   }
 
   return (
-    <div className={cn('relative w-full overflow-hidden', ratioClass, className)}>
+    <div
+      className={cn(
+        'relative w-full overflow-hidden bg-muted ring-1 ring-border ring-inset',
+        ratioClass,
+        className
+      )}
+    >
       <Image
         src={src}
         alt={alt}

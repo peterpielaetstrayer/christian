@@ -31,17 +31,17 @@ export default async function ProjectDetailPage({
     return (
       <>
         <Navigation />
-        <main className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+        <main className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           <div className="max-w-2xl">
-            <h1 className="mb-4 font-serif text-4xl text-foreground md:text-5xl">
+            <h1 className="mb-4 font-serif text-3xl text-foreground sm:text-4xl md:text-5xl">
               Project not found
             </h1>
-            <p className="mb-8 text-lg leading-relaxed text-secondary">
+            <p className="mb-8 text-base leading-relaxed text-secondary sm:text-lg">
               The project you’re looking for isn’t available.
             </p>
             <Link
               href="/work"
-              className="text-sm tracking-wide text-foreground transition-colors hover:text-accent"
+              className="text-sm tracking-wide text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               Back to Work
             </Link>
@@ -58,7 +58,7 @@ export default async function ProjectDetailPage({
       
       <main>
         {/* Hero */}
-        <section className="mx-auto max-w-7xl px-6 pt-10 md:pt-12">
+        <section className="mx-auto max-w-7xl px-6 pt-6 md:pt-10 md:pt-12">
           <div className="relative">
             <ProjectImage
               ratio="16/9"
@@ -67,11 +67,11 @@ export default async function ProjectDetailPage({
               priority
               overlay="soft"
               sizes="(min-width: 1024px) 80vw, 100vw"
-              className="min-h-[360px] md:min-h-[520px]"
+              className="min-h-[320px] md:min-h-[520px]"
             />
             <div className="absolute inset-0 flex items-end justify-start pb-8 md:pb-12">
               <div className="max-w-2xl px-6 text-left">
-                <h1 className="font-serif text-4xl leading-tight text-white md:text-5xl">
+                <h1 className="font-serif text-3xl leading-[1.08] text-white sm:text-4xl md:text-5xl">
                   {project.title}
                 </h1>
                 <div className="mt-4 space-y-1 text-sm text-white/80">
@@ -85,12 +85,12 @@ export default async function ProjectDetailPage({
 
         {/* Summary */}
         {(project.overview || noteItems.length > 0) && (
-          <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
             <div className="grid gap-12 md:grid-cols-2 md:gap-16">
               {project.overview ? (
                 <div>
                   <h2 className="mb-6 font-serif text-2xl text-foreground">Overview</h2>
-                  <p className="text-lg leading-relaxed text-foreground">{project.overview}</p>
+                  <p className="text-base leading-relaxed text-foreground sm:text-lg">{project.overview}</p>
                 </div>
               ) : null}
               {noteItems.length > 0 ? (
@@ -100,7 +100,7 @@ export default async function ProjectDetailPage({
                     {noteItems.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 bg-accent" />
-                        <p className="leading-relaxed text-foreground">{item}</p>
+                        <p className="text-sm leading-relaxed text-foreground sm:text-base">{item}</p>
                       </li>
                     ))}
                   </ul>
@@ -113,8 +113,8 @@ export default async function ProjectDetailPage({
         {/* Gallery */}
         {galleryItems.length > 0 ? (
           <section className="border-t border-border bg-background">
-            <div className="mx-auto max-w-7xl px-6 py-20 md:py-24">
-              <h2 className="mb-12 font-serif text-2xl text-foreground">Gallery</h2>
+            <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+              <h2 className="mb-10 font-serif text-2xl text-foreground md:mb-12">Gallery</h2>
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
                 {galleryItems.map((image) => (
                   <div key={image.src}>
@@ -136,11 +136,11 @@ export default async function ProjectDetailPage({
 
         {/* Next / Previous */}
         <section className="border-t border-border bg-background">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-12 text-sm">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-6 py-10 text-sm sm:py-12">
             {previousProject ? (
               <Link
                 href={`/work/${previousProject.slug}`}
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 ← Previous: {previousProject.title}
               </Link>
@@ -150,7 +150,7 @@ export default async function ProjectDetailPage({
             {nextProject ? (
               <Link
                 href={`/work/${nextProject.slug}`}
-                className="text-muted-foreground transition-colors hover:text-foreground"
+                className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Next: {nextProject.title} →
               </Link>

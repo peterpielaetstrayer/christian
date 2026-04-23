@@ -13,6 +13,8 @@ export function Footer() {
             <span className="text-muted-foreground">·</span>
             <a
               href="mailto:pielaetbuilt@gmail.com"
+              target="_blank"
+              rel="noreferrer"
               className="min-h-11 py-2 text-sm text-muted-foreground transition-colors hover:text-accent"
             >
               Email

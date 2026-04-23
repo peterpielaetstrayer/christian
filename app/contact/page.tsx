@@ -53,6 +53,8 @@ export default function ContactPage() {
           <span className="hidden text-muted-foreground md:inline">·</span>
           <a
             href="mailto:pielaetbuilt@gmail.com"
+            target="_blank"
+            rel="noreferrer"
             className="min-h-11 py-2 text-base text-foreground transition-colors hover:text-accent sm:text-lg"
           >
             pielaetbuilt@gmail.com

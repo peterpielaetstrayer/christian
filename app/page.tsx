@@ -37,12 +37,12 @@ export default function Home() {
             <div className="absolute inset-0 flex items-end justify-center pb-10 md:pb-16">
               <div className="mx-auto max-w-4xl px-6 text-center">
                 <h1 className="font-serif text-5xl leading-tight text-white md:text-6xl lg:text-7xl">
-                  Craft-forward building.
+                  High-end framing and structural work.
                   <br />
-                  Precision execution.
+                  Done right the first time.
                 </h1>
                 <p className="mt-6 text-lg text-white/80 md:text-xl">
-                  High-end framing, complex structural work, clean finishes.
+                  Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.
                 </p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 py-20 md:py-24">
             <div className="mx-auto max-w-2xl text-center">
               <p className="mb-8 text-xl text-foreground">
-                Serious inquiries and collaborators welcome.
+                Text a photo and a quick scope. I’ll respond directly.
               </p>
               <div className="flex items-center justify-center gap-6">
                 <a
@@ -122,6 +122,13 @@ export default function Home() {
                 >
                   Email
                 </a>
+                <span className="text-muted-foreground">·</span>
+                <Link
+                  href="/contact"
+                  className="text-lg text-secondary transition-colors hover:text-accent"
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>

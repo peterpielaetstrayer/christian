@@ -22,6 +22,9 @@ export function Footer() {
             Pielaet Construction
           </p>
           <p className="text-sm text-muted-foreground">
+            Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.
+          </p>
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} All Rights Reserved.
           </p>
         </div>

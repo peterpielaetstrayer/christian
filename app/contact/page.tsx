@@ -59,6 +59,10 @@ export default function ContactPage() {
           </a>
         </div>
 
+        <p className="mb-12 text-base leading-relaxed text-secondary">
+          Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.
+        </p>
+
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="space-y-2">

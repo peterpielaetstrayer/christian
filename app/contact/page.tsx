@@ -17,7 +17,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
     )
-    window.location.href = `mailto:build@namebuild.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:pielaetbuilt@gmail.com?subject=${subject}&body=${body}`
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -39,23 +39,23 @@ export default function ContactPage() {
         <p className="mb-12 text-lg leading-relaxed text-secondary">
           Share drawings, photos, or a problem description.
           <br />
-          {"You'll receive a direct and clear response."}
+          Text preferred. Calls are fine too.
         </p>
 
         {/* Direct Contact Links */}
         <div className="mb-16 flex flex-col gap-6 border-b border-border pb-12 md:flex-row md:items-center">
           <a
-            href="tel:+15035551234"
+            href="tel:+18056513637"
             className="text-lg text-foreground transition-colors hover:text-accent"
           >
-            503.555.1234
+            (805) 651-3637
           </a>
           <span className="hidden text-muted-foreground md:inline">·</span>
           <a
-            href="mailto:build@namebuild.com"
+            href="mailto:pielaetbuilt@gmail.com"
             className="text-lg text-foreground transition-colors hover:text-accent"
           >
-            build@namebuild.com
+            pielaetbuilt@gmail.com
           </a>
         </div>
 

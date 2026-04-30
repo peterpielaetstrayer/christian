@@ -17,9 +17,8 @@ export default function WorkPage() {
             Work
           </h1>
           <p className="text-base leading-relaxed text-secondary sm:text-lg">
-            A selection of framing, structural, and finish work.
-            <br />
-            Executed with precision and attention to long-term durability.
+            A selection of custom residential work—renovations, structural modifications, and detailed carpentry.
+            Built for long-term durability and clean finish alignment.
           </p>
         </div>
 

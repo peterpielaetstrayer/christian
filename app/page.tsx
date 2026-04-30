@@ -56,12 +56,12 @@ export default function Home() {
             <div className="absolute inset-0 flex items-end justify-center pb-8 md:pb-16">
               <div className="mx-auto max-w-4xl text-center">
                 <h1 className="font-serif text-4xl leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-                  High-end framing and structural work.
+                  Custom residential construction
                   <br />
-                  Done right the first time.
+                  with a structural backbone.
                 </h1>
                 <p className="mx-auto mt-5 max-w-[34rem] text-base leading-relaxed text-white/80 sm:text-lg md:mt-6 md:text-xl">
-                  Serving Santa Barbara → Los Angeles. Larger jobs negotiable outside the area.
+                  Renovations, additions, and structural work—built with disciplined sequencing and finish alignment.
                 </p>
                 <div className="mx-auto mt-7 flex flex-wrap items-center justify-center gap-3 md:mt-9">
                   <Link
@@ -147,7 +147,7 @@ export default function Home() {
                   Process
                 </h2>
                 <p className="text-base leading-relaxed text-secondary sm:text-lg">
-                  Fast clarity up front. Clean execution in the field.
+                  Clarity up front. Clean execution in the field.
                 </p>
               </div>
               <ol className="space-y-6">

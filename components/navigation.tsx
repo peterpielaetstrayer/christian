@@ -19,7 +19,7 @@ export function Navigation() {
         >
           <span className="font-serif text-lg tracking-[0.18em]">PIELAET</span>
           <span className="mt-1 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-            Construction
+            Construction & Design
           </span>
         </Link>
 

@@ -2,11 +2,11 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 
 const coreFocus = [
-  'Structural framing',
-  'Vault and arch geometry',
-  'Finish carpentry',
-  'Code-aware execution',
-  'Limited drafting support',
+  'Custom renovations + additions',
+  'Structural modifications (code-aware)',
+  'Exterior carpentry + envelope details',
+  'Finish alignment + clean transitions',
+  'Clear communication + disciplined sequencing',
 ]
 
 export default function AboutPage() {
@@ -23,9 +23,10 @@ export default function AboutPage() {
         <section className="mb-16 md:mb-20">
           <div className="max-w-none">
             <p className="text-base leading-relaxed text-foreground sm:text-lg">
-              Builder and craft-focused carpenter with over a decade of experience in high-end 
-              framing and finish work. Trusted to execute complex structural geometry while 
-              maintaining clean finishes and durable construction.
+              Pielaet Construction & Design is a California General B contractor focused on
+              custom residential work—renovations, additions, and structural modifications.
+              We bring structural judgment and a design eye to the same problem: building
+              spaces that look right and perform for decades.
             </p>
           </div>
         </section>
@@ -45,10 +46,11 @@ export default function AboutPage() {
 
         {/* Documentation */}
         <section className="border-t border-border pt-12 md:pt-16">
-          <h2 className="mb-6 font-serif text-2xl text-foreground">Documentation</h2>
+          <h2 className="mb-6 font-serif text-2xl text-foreground">How we work</h2>
           <p className="text-base leading-relaxed text-secondary sm:text-lg">
-            Finished work, in-progress builds, and detail shots are documented for clarity 
-            and transparency throughout the construction process.
+            We start with the scope and constraints, clarify sequencing, and then execute with
+            clean coordination across trades. In-progress documentation and detail photos keep
+            decisions explicit and reduce rework.
           </p>
         </section>
       </main>

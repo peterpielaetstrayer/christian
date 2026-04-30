@@ -1,7 +1,7 @@
 export function Footer() {
-  const licenseNumber = process.env.NEXT_PUBLIC_LICENSE_NUMBER
-  const licenseLabel = process.env.NEXT_PUBLIC_LICENSE_LABEL ?? 'License'
-  const insuredLabel = process.env.NEXT_PUBLIC_INSURED_LABEL ?? 'Insured'
+  const licenseNumber = process.env.NEXT_PUBLIC_LICENSE_NUMBER ?? '1153030'
+  const licenseLabel = process.env.NEXT_PUBLIC_LICENSE_LABEL ?? 'CA CSLB'
+  const insuredLabel = process.env.NEXT_PUBLIC_INSURED_LABEL ?? 'Licensed & Insured'
 
   return (
     <footer className="border-t border-border bg-background">

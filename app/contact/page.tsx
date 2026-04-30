@@ -1,31 +1,8 @@
-'use client'
-
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
-import { useState } from 'react'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const subject = encodeURIComponent('Project Inquiry')
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )
-    window.location.href = `mailto:pielaetbuilt@gmail.com?subject=${subject}&body=${body}`
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  const formAction = 'https://formsubmit.co/pielaetbuilt@gmail.com'
 
   return (
     <>
@@ -61,12 +38,14 @@ export default function ContactPage() {
           </a>
         </div>
 
-        <p className="mb-10 text-sm leading-relaxed text-secondary sm:mb-12 sm:text-base">
-          Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.
-        </p>
-
         {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-7 sm:space-y-8">
+        <form action={formAction} method="POST" className="space-y-7 sm:space-y-8">
+          <input type="hidden" name="_subject" value="Project Inquiry — Pielaet Construction" />
+          <input type="hidden" name="_template" value="box" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="/contact/thanks" />
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" />
+
           <div className="space-y-2">
             <label htmlFor="name" className="block text-sm font-medium text-foreground">
               Name
@@ -75,8 +54,6 @@ export default function ContactPage() {
               type="text"
               id="name"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
               className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
               placeholder="Your name"
               required
@@ -91,8 +68,6 @@ export default function ContactPage() {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
               className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
               placeholder="your.email@example.com"
               required
@@ -106,8 +81,6 @@ export default function ContactPage() {
             <textarea
               id="message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
               rows={6}
               className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
               placeholder="Describe your project, share scope details, or ask a question..."

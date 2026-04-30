@@ -1,4 +1,8 @@
 export function Footer() {
+  const licenseNumber = process.env.NEXT_PUBLIC_LICENSE_NUMBER
+  const licenseLabel = process.env.NEXT_PUBLIC_LICENSE_LABEL ?? 'License'
+  const insuredLabel = process.env.NEXT_PUBLIC_INSURED_LABEL ?? 'Insured'
+
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-6 py-10 sm:py-12">
@@ -22,6 +26,9 @@ export function Footer() {
           </div>
           <p className="text-sm text-muted-foreground">
             Pielaet Construction
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {licenseNumber ? `${licenseLabel} #${licenseNumber} · ${insuredLabel}` : insuredLabel}
           </p>
           <p className="max-w-[42rem] text-sm text-muted-foreground">
             Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.

@@ -18,7 +18,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Pielaet Construction — High-end framing and structural work',
   description:
-    'High-end framing and structural work. Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.',
+    'High-end framing and structural work from Santa Barbara to Los Angeles.',
   icons: {
     icon: [
       {

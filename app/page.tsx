@@ -16,6 +16,25 @@ const capabilities = [
   'Limited drafting and design support',
 ]
 
+const processSteps = [
+  {
+    title: 'Send scope',
+    detail: 'Text photos, drawings, and a short description.',
+  },
+  {
+    title: 'Clarify + confirm',
+    detail: 'Quick questions to lock scope, constraints, and timeline.',
+  },
+  {
+    title: 'Estimate + schedule',
+    detail: 'Clear pricing, sequencing, and start window.',
+  },
+  {
+    title: 'Execute cleanly',
+    detail: 'Code-aware build with tight coordination and finish alignment.',
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -42,8 +61,22 @@ export default function Home() {
                   Done right the first time.
                 </h1>
                 <p className="mx-auto mt-5 max-w-[34rem] text-base leading-relaxed text-white/80 sm:text-lg md:mt-6 md:text-xl">
-                  Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.
+                  Serving Santa Barbara → Los Angeles. Larger jobs negotiable outside the area.
                 </p>
+                <div className="mx-auto mt-7 flex flex-wrap items-center justify-center gap-3 md:mt-9">
+                  <Link
+                    href="/contact"
+                    className="min-h-11 border border-white/85 bg-white/95 px-6 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white sm:px-7 sm:text-base"
+                  >
+                    Start with the scope
+                  </Link>
+                  <a
+                    href="tel:+18056513637"
+                    className="min-h-11 border border-white/55 bg-transparent px-6 py-2 text-sm font-medium text-white/90 transition-colors hover:border-white/85 hover:text-white sm:px-7 sm:text-base"
+                  >
+                    Call / Text
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -101,6 +134,39 @@ export default function Home() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process */}
+        <section className="border-t border-border bg-background">
+          <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+            <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+              <div className="max-w-xl">
+                <h2 className="mb-4 font-serif text-2xl text-foreground sm:text-3xl">
+                  Process
+                </h2>
+                <p className="text-base leading-relaxed text-secondary sm:text-lg">
+                  Fast clarity up front. Clean execution in the field.
+                </p>
+              </div>
+              <ol className="space-y-6">
+                {processSteps.map((step, index) => (
+                  <li key={step.title} className="flex gap-4">
+                    <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center border border-border text-sm text-muted-foreground">
+                      {index + 1}
+                    </div>
+                    <div>
+                      <p className="text-base font-medium text-foreground sm:text-lg">
+                        {step.title}
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-secondary sm:text-base">
+                        {step.detail}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         </section>

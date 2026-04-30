@@ -47,18 +47,16 @@ export const projects: Project[] = [
     slug: 'barrel-vault-framing',
     scope: 'Structural Framing + Finish',
     overview:
-      'Curved framing package executed from engineer drawings with clean integration across finish planes.',
+      'Curved framing executed with careful layout and clean alignment at adjacent finish planes.',
     notes: [
-      'Scope — Structural framing with finish alignment.',
-      'Technical challenge — Curved geometry and precise layout.',
-      'Materials / method — Engineered framing with staged sequencing.',
-      'Outcome — Code-compliant structure with clean sight lines.',
+      'Curved geometry laid out and framed to maintain clean sight lines.',
+      'Coordination around finish transitions and long-run alignment.',
+      'Built for stability, straight lines, and repeatable layout.',
     ],
     constraints: [
-      'Load-bearing requirements tied to structural calculations.',
-      'Fire code compliance for exposed framing members.',
-      'Sequencing with HVAC and electrical rough-ins.',
-      'Material selection for long-term stability.',
+      'Tight tolerances across curved members and long runs.',
+      'Coordination with adjacent trades and finish schedule.',
+      'Sequencing to avoid rework and protect finish surfaces.',
     ],
     gallery: makeGallery('barrel-vault-framing', [
       'Structural framing layout',
@@ -75,18 +73,16 @@ export const projects: Project[] = [
     slug: 'custom-skylight-ceiling',
     scope: 'Structural Framing + Finish Integration',
     overview:
-      'Skylight integration executed with precise framing, waterproofing coordination, and clean ceiling transitions.',
+      'Skylight opening and ceiling transitions executed for clean lines and durable integration.',
     notes: [
-      'Scope — Structural modifications and finish integration.',
-      'Technical challenge — Load redistribution and waterproofing coordination.',
-      'Materials / method — Framing adjustments with curb alignment.',
-      'Outcome — Clean daylight integration with stable ceiling plane.',
+      'Clean ceiling plane and consistent reveals at the opening.',
+      'Framing aligned to finish intent and daylight geometry.',
+      'Detail attention at corners, edges, and transitions.',
     ],
     constraints: [
-      'Structural load redistribution reviewed by engineer.',
-      'Waterproofing integration with roofing contractor.',
-      'Coordination of finish ceiling plane with skylight curb.',
-      'Daylighting and thermal bridge considerations.',
+      'Precise layout at the opening to keep lines straight.',
+      'Coordination between framing and finish surfaces.',
+      'Durability at edges and penetrations.',
     ],
     gallery: makeGallery('custom-skylight-ceiling', [
       'Structural opening framing',
@@ -103,18 +99,16 @@ export const projects: Project[] = [
     slug: 'outdoor-structural-stair',
     scope: 'Structural Design + Construction',
     overview:
-      'Exterior stair system built for exposure with engineered connections and code-compliant guardrails.',
+      'Exterior stair system framed and installed with clean geometry and durable outdoor detailing.',
     notes: [
-      'Scope — Structural stair build with guardrail integration.',
-      'Technical challenge — Weather exposure and connection detailing.',
-      'Materials / method — Durable exterior-rated materials and hardware.',
-      'Outcome — Clean, code-compliant access with long-term durability.',
+      'Stair layout framed for consistent rise/run and clean stringer lines.',
+      'Durable exterior detailing and straightforward access.',
+      'Built to stay tight and perform through weather cycles.',
     ],
     constraints: [
-      'Structural connection to existing foundation.',
-      'Code compliance for rise/run and guardrail height.',
-      'Material durability for exterior exposure.',
-      'Coordination with site drainage and grading.',
+      'Connection detailing to existing structure.',
+      'Consistent geometry at treads/risers and landings.',
+      'Weather exposure and long-term movement.',
     ],
     gallery: makeGallery('outdoor-structural-stair', [
       'Foundation connection detail',
@@ -259,12 +253,40 @@ export const projects: Project[] = [
       'Framework installed with tight joinery and clean alignment across primary members.',
     images: makeProjectImages('custom-timber-framework', 'Custom Timber Framework'),
   },
+  {
+    title: 'Deck + Pergola + Walkway',
+    role: 'General Contractor',
+    focus: 'Outdoor Living + Durable Detailing',
+    slug: 'deck-pergola-build',
+    scope: 'Exterior Carpentry',
+    overview:
+      'Exterior updates tying together a deck, pergola cover, and walkway for clean access and outdoor use.',
+    notes: [
+      'Deck rebuild with wide steps and clean perimeter lines.',
+      'Pergola cover framed for even spacing and consistent shadow lines.',
+      'Walkway installed to create a clean path through landscape to the entry.',
+    ],
+    constraints: [
+      'Weather exposure and long-term movement.',
+      'Alignment between existing house lines, posts, and finish surfaces.',
+      'Durable detailing at edges, transitions, and connections.',
+    ],
+    gallery: makeGallery('deck-pergola-build', [
+      'Deck steps + perimeter finish',
+      'Landscape walkway to entry',
+      'Pergola cover + post layout',
+    ]),
+    result:
+      'Outdoor living upgrades completed with clean lines, durable detailing, and a cohesive site path.',
+    images: makeProjectImages('deck-pergola-build', 'Deck + Pergola + Walkway'),
+  },
 ]
 
 export const featuredProjectSlugs = [
   'barrel-vault-framing',
   'custom-skylight-ceiling',
   'outdoor-structural-stair',
+  'deck-pergola-build',
 ]
 
 export const getProjects = () => projects

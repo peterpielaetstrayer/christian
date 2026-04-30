@@ -32,10 +32,10 @@ export default function Home() {
               alt={heroProject.images.hero.alt}
               priority
               sizes="(min-width: 1024px) 80vw, 100vw"
-              className="min-h-[320px] md:min-h-[520px]"
+              className="min-h-[420px] sm:min-h-[460px] md:min-h-[520px]"
               overlay="soft"
             />
-            <div className="absolute inset-0 flex items-end justify-center pb-8 md:pb-16">
+            <div className="absolute inset-0 flex items-end justify-center pb-10 md:pb-16">
               <div className="mx-auto max-w-4xl text-center">
                 <h1 className="font-serif text-4xl leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">
                   Custom residential construction

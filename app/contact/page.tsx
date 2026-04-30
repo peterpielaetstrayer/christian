@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+import { ProcessBlock } from '@/components/process-section'
 
 export default function ContactPage() {
   const formAction = 'https://formsubmit.co/pielaetbuilt@gmail.com'
@@ -8,7 +9,7 @@ export default function ContactPage() {
     <>
       <Navigation />
       
-      <main className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <main className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <h1 className="mb-5 font-serif text-3xl text-foreground sm:text-4xl md:mb-6 md:text-5xl">
           Start with the scope.
         </h1>
@@ -38,63 +39,71 @@ export default function ContactPage() {
           </a>
         </div>
 
-        {/* Contact Form */}
-        <form action={formAction} method="POST" className="space-y-7 sm:space-y-8">
-          <input type="hidden" name="_subject" value="Project Inquiry — Pielaet Construction" />
-          <input type="hidden" name="_template" value="box" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="/contact/thanks" />
-          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" />
+        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+          <div className="order-2 md:order-1">
+            {/* Contact Form */}
+            <form action={formAction} method="POST" className="space-y-7 sm:space-y-8">
+              <input type="hidden" name="_subject" value="Project Inquiry — Pielaet Construction" />
+              <input type="hidden" name="_template" value="box" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="/contact/thanks" />
+              <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" />
 
-          <div className="space-y-2">
-            <label htmlFor="name" className="block text-sm font-medium text-foreground">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
-              placeholder="Your name"
-              required
-            />
+              <div className="space-y-2">
+                <label htmlFor="name" className="block text-sm font-medium text-foreground">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-sm font-medium text-foreground">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className="block text-sm font-medium text-foreground">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
+                  placeholder="Describe your project, share scope details, or ask a question..."
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full border border-foreground bg-transparent px-8 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto"
+              >
+                Send
+              </button>
+            </form>
           </div>
 
-          <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm font-medium text-foreground">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
-              placeholder="your.email@example.com"
-              required
-            />
-          </div>
-
-          <div className="space-y-2">
-            <label htmlFor="message" className="block text-sm font-medium text-foreground">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={6}
-              className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
-              placeholder="Describe your project, share scope details, or ask a question..."
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full border border-foreground bg-transparent px-8 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto"
-          >
-            Send
-          </button>
-        </form>
+          <aside className="order-1 md:order-2 md:pt-2">
+            <ProcessBlock />
+          </aside>
+        </div>
       </main>
 
       <Footer />

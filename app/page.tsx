@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { ProjectImage } from '@/components/project-image'
+import { ProcessSection } from '@/components/process-section'
 import { getFeaturedProjects } from '@/data/projects'
 
 const featuredProjects = getFeaturedProjects()
@@ -14,25 +15,6 @@ const capabilities = [
   'Clean execution from drawing to finish',
   'High-end finish carpentry',
   'Limited drafting and design support',
-]
-
-const processSteps = [
-  {
-    title: 'Send scope',
-    detail: 'Text photos, drawings, and a short description.',
-  },
-  {
-    title: 'Clarify + confirm',
-    detail: 'Quick questions to lock scope, constraints, and timeline.',
-  },
-  {
-    title: 'Estimate + schedule',
-    detail: 'Clear pricing, sequencing, and start window.',
-  },
-  {
-    title: 'Execute cleanly',
-    detail: 'Code-aware build with tight coordination and finish alignment.',
-  },
 ]
 
 export default function Home() {
@@ -138,38 +120,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Process */}
-        <section className="border-t border-border bg-background">
-          <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-            <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-              <div className="max-w-xl">
-                <h2 className="mb-4 font-serif text-2xl text-foreground sm:text-3xl">
-                  Process
-                </h2>
-                <p className="text-base leading-relaxed text-secondary sm:text-lg">
-                  Clarity up front. Clean execution in the field.
-                </p>
-              </div>
-              <ol className="space-y-6">
-                {processSteps.map((step, index) => (
-                  <li key={step.title} className="flex gap-4">
-                    <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center border border-border text-sm text-muted-foreground">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <p className="text-base font-medium text-foreground sm:text-lg">
-                        {step.title}
-                      </p>
-                      <p className="mt-1 text-sm leading-relaxed text-secondary sm:text-base">
-                        {step.detail}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
+        <ProcessSection />
 
         {/* Contact Strip */}
         <section className="border-t border-border bg-background">

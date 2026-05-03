@@ -3,10 +3,10 @@ import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { ProjectImage } from '@/components/project-image'
 import { ProcessSection } from '@/components/process-section'
+import { homeHero } from '@/data/home'
 import { getFeaturedProjects } from '@/data/projects'
 
 const featuredProjects = getFeaturedProjects()
-const heroProject = featuredProjects[0]
 
 const capabilities = [
   'Code-compliant structural modifications',
@@ -28,8 +28,8 @@ export default function Home() {
           <div className="relative">
             <ProjectImage
               ratio="16/9"
-              src={heroProject.images.hero.src}
-              alt={heroProject.images.hero.alt}
+              src={homeHero.src}
+              alt={homeHero.alt}
               priority
               sizes="(min-width: 1024px) 80vw, 100vw"
               className="min-h-[420px] sm:min-h-[460px] md:min-h-[520px]"

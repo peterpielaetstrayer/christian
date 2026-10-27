@@ -39,7 +39,12 @@ const expected = active.flatMap((p) => [
 ])
 const missingActiveImagePaths = expected.filter((p) => !allPaths.has(p))
 const visibleImages = imageFiles.filter((f) => active.some((p) => p.slug === f.project))
-const hashGroups = Map.groupBy(visibleImages, (f) => f.sha256)
+const hashGroups = new Map()
+for (const file of visibleImages) {
+  const group = hashGroups.get(file.sha256) ?? []
+  group.push(file)
+  hashGroups.set(file.sha256, group)
+}
 const reusedActiveImageGroups = [...hashGroups.values()]
   .filter((g) => new Set(g.map((f) => f.project)).size > 1)
   .map((g) => g.map((f) => f.path))

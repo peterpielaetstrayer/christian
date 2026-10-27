@@ -111,7 +111,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
 
         {/* Gallery */}
         {galleryItems.length > 0 ? (
-          <section className="border-t border-border bg-background">
+          <section id="gallery" className="scroll-mt-16 border-t border-border bg-background">
             <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
               <h2 className="mb-10 font-serif text-2xl text-foreground md:mb-12">Gallery</h2>
               <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">

@@ -15,9 +15,9 @@ export default function ContactPage() {
         </h1>
 
         <p className="mb-10 text-base leading-relaxed text-secondary sm:mb-12 sm:text-lg">
-          Share drawings, photos, or a problem description.
+          Share a few photos, drawings, or a description of your project.
           <br />
-          Text preferred. Calls are fine too.
+          Text is preferred; calls and email are welcome, too.
         </p>
 
         {/* Direct Contact Links */}
@@ -46,7 +46,7 @@ export default function ContactPage() {
               <input type="hidden" name="_subject" value="Project Inquiry — Pielaet Construction" />
               <input type="hidden" name="_template" value="box" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="/contact/thanks" />
+              <input type="hidden" name="_next" value="https://www.pielaetconstruction.com/contact/thanks" />
               <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" />
 
               <div className="space-y-2">

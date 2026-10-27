@@ -246,8 +246,8 @@ export const projects: Project[] = [
       'Staged installation for safe assembly.',
     ],
     gallery: makeGallery('custom-timber-framework', [
-      'Exterior framing in progress',
-      'Roof framing and support details',
+      'Upper-level stair and roof framing',
+      'Exterior framing installation in progress',
     ]),
     result:
       'Framework installed with tight joinery and clean alignment across primary members.',

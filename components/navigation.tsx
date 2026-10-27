@@ -8,7 +8,8 @@ export function Navigation() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
 
-  const isActive = (path: string) => pathname === path
+  const isActive = (path: string) =>
+    path === '/work' ? pathname === '/work' || pathname.startsWith('/work/') : pathname === path
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -27,6 +28,7 @@ export function Navigation() {
           <div className="flex items-center gap-6">
             <Link
               href="/work"
+              aria-current={isActive('/work') ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive('/work') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
               } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
@@ -35,6 +37,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/about"
+              aria-current={isActive('/about') ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive('/about') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
               } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
@@ -43,6 +46,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/contact"
+              aria-current={isActive('/contact') ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive('/contact') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
               } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background`}
@@ -85,6 +89,7 @@ export function Navigation() {
           <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-6">
             <Link
               href="/work"
+              aria-current={isActive('/work') ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive('/work') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
               }`}
@@ -94,6 +99,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/about"
+              aria-current={isActive('/about') ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive('/about') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
               }`}
@@ -103,6 +109,7 @@ export function Navigation() {
             </Link>
             <Link
               href="/contact"
+              aria-current={isActive('/contact') ? 'page' : undefined}
               className={`text-sm tracking-wide transition-colors ${
                 isActive('/contact') ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'
               }`}

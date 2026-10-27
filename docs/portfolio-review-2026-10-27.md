@@ -5,6 +5,16 @@
 **Photo archive:** [Website Photos](https://drive.google.com/drive/folders/1kmE3vimOxvuvk7H5SdBO7_D0YeQcWbeg)  
 **Source direction:** *Craft, Direction & Site Foundation*; contractor identity first, design capability second; architectural, precise, clean, modern, craft-forward. Keep the approved minimalist layout.
 
+## REQUIRED APPROVAL GATE — PHOTO FREEZE
+
+**Hard stop:** No changes to the images currently used on the website, project image assignments, photo order, hero images, galleries, or number/identity of published projects until Peter and Christian review the **one-page six-photo shortlist together**. The six photos are *discussion candidates*, not approved replacements. This applies to future pull requests as well as the current quality-review branch.
+
+The first decision session should be short and visual, ideally a screen-share using the one-page shortlist. Christian chooses which **real jobs** best represent his craftsmanship and desired future work, confirms which photos actually belong together, identifies his role, and approves public usage. Only afterward should we form a proposed image map and a reviewable preview; **no photo changes should be merged or published before approval**.
+
+**Long-term approved publication strategy:** Keep the approved warm architectural minimalism and builder/craftsperson-first identity. Aim for **3–6 excellent, real featured project stories** at launch, showing a range of desired work with one accurate hero plus a few coherent supporting photographs each. Treat generic strengths as capabilities rather than fictional stand-alone jobs. A broader categorized project archive is a later phase, not a prerequisite. After the review and image selections, optimize images, refine only substantiated copy, run accessibility/mobile/contact/license checks, and request final approval before production.
+
+**Minimize work for Christian:** Do not ask him to bulk-sort phone photos, create Drive categories, rename files, or write case studies. Bring a clear shortlist; only request specific missing images afterward, which can be sent by text.
+
 ## Decision rule
 
 Treat a project page as an **actual identifiable job**, not a general skill category. Use only photos belonging to that job, state the person's actual contribution, and don't infer project leadership, permit/inspection results, materials, scope, engineering sign-off, or finished performance from attractive photos alone.

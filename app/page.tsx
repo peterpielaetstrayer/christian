@@ -43,7 +43,7 @@ export default function Home() {
                   with a structural backbone.
                 </h1>
                 <p className="mx-auto mt-5 max-w-[34rem] text-base leading-relaxed text-white/80 sm:text-lg md:mt-6 md:text-xl">
-                  Renovations, additions, and structural work—built with disciplined sequencing and finish alignment.
+                  Custom renovations, additions, and structural carpentry, with careful planning and attention to the details that last.
                 </p>
                 <div className="mx-auto mt-7 flex flex-wrap items-center justify-center gap-3 md:mt-9">
                   <Link

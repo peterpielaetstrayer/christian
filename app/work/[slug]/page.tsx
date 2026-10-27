@@ -121,7 +121,9 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
                       ratio="3/2"
                       src={image.src}
                       alt={image.alt}
-                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+                      sizes={galleryItems.length === 1
+                        ? '(min-width: 1280px) 1152px, (min-width: 768px) 85vw, 100vw'
+                        : '(min-width: 1280px) 560px, (min-width: 768px) 45vw, 100vw'}
                     />
                     {image.caption ? (
                       <p className="mt-3 text-sm text-muted-foreground">{image.caption}</p>
@@ -144,7 +146,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
                 ← Previous: {previousProject.title}
               </Link>
             ) : (
-              <span className="text-muted-foreground">Previous project</span>
+              <Link href="/work" className="text-muted-foreground transition-colors hover:text-foreground">← All work</Link>
             )}
             {nextProject ? (
               <Link
@@ -154,7 +156,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
                 Next: {nextProject.title} →
               </Link>
             ) : (
-              <span className="text-muted-foreground">Next project</span>
+              <Link href="/work" className="text-muted-foreground transition-colors hover:text-foreground">All work →</Link>
             )}
           </div>
         </section>

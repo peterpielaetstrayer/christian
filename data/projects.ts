@@ -139,7 +139,7 @@ export const projects: Project[] = [
     ],
     gallery: makeGallery('groin-vault-detail-work', [
       'Detail layout',
-      'In-progress trim work',
+      'Intersecting vault framing detail',
     ]),
     result:
       'Completed detail work maintains consistent geometry and clean transitions across finish planes.',
@@ -246,8 +246,8 @@ export const projects: Project[] = [
       'Staged installation for safe assembly.',
     ],
     gallery: makeGallery('custom-timber-framework', [
-      'Timber selection',
-      'Joinery layout',
+      'Exterior framing in progress',
+      'Roof framing and support details',
     ]),
     result:
       'Framework installed with tight joinery and clean alignment across primary members.',

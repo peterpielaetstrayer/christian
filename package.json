@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run audit:photos",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "audit:photos": "node scripts/audit-photo-assets.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

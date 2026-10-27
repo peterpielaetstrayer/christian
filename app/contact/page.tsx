@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const formAction = 'https://formsubmit.co/pielaetbuilt@gmail.com'
+  const isPreview = process.env.VERCEL_ENV === 'preview'
 
   return (
     <>
@@ -49,7 +50,13 @@ export default function ContactPage() {
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div className="order-2 md:order-1">
             {/* Contact Form */}
-            <form action={formAction} method="POST" className="space-y-7 sm:space-y-8">
+            {isPreview && (
+              <p className="mb-5 text-sm leading-relaxed text-secondary" role="status">
+                This is a private review. The inquiry form is disabled until final delivery testing; phone and email links remain available.
+              </p>
+            )}
+            <form action={isPreview ? undefined : formAction} method="POST">
+              <fieldset disabled={isPreview} className="space-y-7 sm:space-y-8">
               <input type="hidden" name="_subject" value="Project Inquiry — Pielaet Construction" />
               <input type="hidden" name="_template" value="box" />
               <input type="hidden" name="_captcha" value="false" />
@@ -104,6 +111,7 @@ export default function ContactPage() {
               >
                 Send
               </button>
+              </fieldset>
             </form>
           </div>
 

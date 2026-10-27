@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
   const previousProject = projectIndex > 0 ? projects[projectIndex - 1] : null
   const nextProject = projectIndex >= 0 && projectIndex < projects.length - 1 ? projects[projectIndex + 1] : null
   const noteItems = [
-    project?.scope ? `Scope — ${project.scope}` : null,
+    project?.scope ? `Subject — ${project.scope}` : null,
     ...(project?.notes ?? []),
   ].filter(Boolean) as string[]
   const galleryItems = project?.gallery.filter((image) => image.src) ?? []
@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
               priority
               overlay="soft"
               sizes="(min-width: 1024px) 80vw, 100vw"
-              className="min-h-[320px] md:min-h-[520px]"
+              className="min-h-[310px] sm:min-h-[420px] md:min-h-[500px]"
             />
             <div className="absolute inset-0 flex items-end justify-start pb-8 md:pb-12">
               <div className="max-w-2xl px-6 text-left">
@@ -74,7 +74,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
                   {project.title}
                 </h1>
                 <div className="mt-4 space-y-1 text-sm text-white/80">
-                  <p>Role — {project.role}</p>
+                  <p>Discipline — {project.role}</p>
                   <p>Focus — {project.focus}</p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
               ) : null}
               {noteItems.length > 0 ? (
                 <div>
-                  <h2 className="mb-6 font-serif text-2xl text-foreground">Project Notes</h2>
+                  <h2 className="mb-6 font-serif text-2xl text-foreground">Seen in the photographs</h2>
                   <ul className="space-y-4">
                     {noteItems.map((item) => (
                       <li key={item} className="flex items-start gap-3">
@@ -111,17 +111,19 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
 
         {/* Gallery */}
         {galleryItems.length > 0 ? (
-          <section className="border-t border-border bg-background">
+          <section id="gallery" className="scroll-mt-16 border-t border-border bg-background">
             <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-              <h2 className="mb-10 font-serif text-2xl text-foreground md:mb-12">Gallery</h2>
-              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+              <h2 className="mb-10 font-serif text-2xl text-foreground md:mb-12">A closer look</h2>
+              <div className={galleryItems.length === 1 ? 'grid gap-8' : 'grid gap-8 md:grid-cols-2 md:gap-10'}>
                 {galleryItems.map((image) => (
                   <div key={image.src}>
                     <ProjectImage
                       ratio="3/2"
                       src={image.src}
                       alt={image.alt}
-                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+                      sizes={galleryItems.length === 1
+                        ? '(min-width: 1280px) 1152px, (min-width: 768px) 85vw, 100vw'
+                        : '(min-width: 1280px) 560px, (min-width: 768px) 45vw, 100vw'}
                     />
                     {image.caption ? (
                       <p className="mt-3 text-sm text-muted-foreground">{image.caption}</p>
@@ -144,7 +146,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
                 ← Previous: {previousProject.title}
               </Link>
             ) : (
-              <span className="text-muted-foreground">Previous project</span>
+              <Link href="/work" className="text-muted-foreground transition-colors hover:text-foreground">← All work</Link>
             )}
             {nextProject ? (
               <Link
@@ -154,7 +156,7 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
                 Next: {nextProject.title} →
               </Link>
             ) : (
-              <span className="text-muted-foreground">Next project</span>
+              <Link href="/work" className="text-muted-foreground transition-colors hover:text-foreground">All work →</Link>
             )}
           </div>
         </section>

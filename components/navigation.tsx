@@ -80,7 +80,7 @@ export function Navigation() {
           aria-controls="mobile-nav"
           onClick={() => setIsOpen((open) => !open)}
         >
-          Menu
+          {isOpen ? 'Close menu' : 'Menu'}
         </button>
       </div>
 

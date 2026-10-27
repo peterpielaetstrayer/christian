@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 }
 
 const featuredProjects = getFeaturedProjects()
+// Review navigation is only displayed on Vercel preview deployments.
+const isPhotoReviewPreview = process.env.VERCEL_ENV === 'preview'
 
 const capabilities = [
   'Code-compliant structural modifications',
@@ -28,6 +30,27 @@ export default function Home() {
       <Navigation />
       
       <main>
+        {isPhotoReviewPreview && (
+          <section aria-label="Preview changes" className="mx-auto max-w-7xl px-6 pt-6">
+            <div className="border border-border bg-muted/40 px-5 py-4 text-sm sm:px-6">
+              <p className="font-medium text-foreground">Portfolio curation preview — October 2026</p>
+              <p className="mt-1 leading-relaxed text-secondary">
+                This private draft now presents eight photo-supported studies, with six featured below. The three entries using recycled project imagery have been held for verification. Start with the full work index or inspect the newly curated studies:
+              </p>
+              <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
+                <Link href="/work" className="underline underline-offset-4 hover:text-accent">
+                  View all eight studies
+                </Link>
+                <Link href="/work/circular-arch-window" className="underline underline-offset-4 hover:text-accent">
+                  Architectural Arches
+                </Link>
+                <Link href="/work/outdoor-shed" className="underline underline-offset-4 hover:text-accent">
+                  Custom Outdoor Shed
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
         {/* Hero Section */}
         <section className="mx-auto max-w-7xl px-6 pt-6 md:pt-10">
           <div className="relative">
@@ -71,9 +94,14 @@ export default function Home() {
 
         {/* Featured Work */}
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <h2 className="mb-10 font-serif text-2xl text-foreground sm:text-3xl md:mb-16">
-            Selected Work
-          </h2>
+          <div className="mb-10 flex flex-col justify-between gap-3 sm:mb-12 md:mb-16 md:flex-row md:items-end">
+            <h2 className="font-serif text-2xl text-foreground sm:text-3xl">
+              Selected Work
+            </h2>
+            <p className="max-w-md text-sm leading-relaxed text-secondary sm:text-base">
+              Framing, architectural details, and exterior construction, documented as the work takes shape.
+            </p>
+          </div>
           
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
             {featuredProjects.map((project) => (

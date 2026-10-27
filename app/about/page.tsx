@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 }
 
 const coreFocus = [
-  'Custom renovations + additions',
-  'Structural modifications (code-aware)',
-  'Exterior carpentry + envelope details',
-  'Finish alignment + clean transitions',
-  'Clear communication + disciplined sequencing',
+  'Custom residential framing and structural carpentry',
+  'Vaults, arches and nonstandard geometry',
+  'Finish carpentry and considered transitions',
+  'Design and drafting as practical building tools',
+  'Coordination from structural work to final detail',
 ]
 
 export default function AboutPage() {
@@ -30,10 +30,9 @@ export default function AboutPage() {
         <section className="mb-16 md:mb-20">
           <div className="max-w-none">
             <p className="text-base leading-relaxed text-foreground sm:text-lg">
-              Pielaet Construction & Design is a California General B contractor focused on
-              custom residential work—renovations, additions, and structural modifications.
-              We bring together practical building expertise and a design eye, with attention
-              to how structure, proportion, and finish details work together.
+              Pielaet Construction & Design is rooted in more than a decade of detail-driven
+              framing and carpentry. The work ranges from structural layouts and unusual curved
+              forms to finished details, with an eye for how each part contributes to the whole.
             </p>
           </div>
         </section>
@@ -55,9 +54,9 @@ export default function AboutPage() {
         <section className="border-t border-border pt-12 md:pt-16">
           <h2 className="mb-6 font-serif text-2xl text-foreground">How we work</h2>
           <p className="text-base leading-relaxed text-secondary sm:text-lg">
-            We start with the scope and constraints, clarify sequencing, and then execute with
-            clean coordination across trades. In-progress documentation and detail photos keep
-            decisions explicit and reduce rework.
+            Good work begins by understanding the drawings, the site, and the real constraints.
+            It continues through thoughtful layout, practical problem-solving, and attention to
+            the surfaces and junctions people experience every day.
           </p>
         </section>
       </main>

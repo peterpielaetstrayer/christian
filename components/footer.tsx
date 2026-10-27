@@ -2,6 +2,8 @@ export function Footer() {
   const licenseNumber = process.env.NEXT_PUBLIC_LICENSE_NUMBER ?? '1153030'
   const licenseLabel = process.env.NEXT_PUBLIC_LICENSE_LABEL ?? 'CA CSLB'
   const insuredLabel = process.env.NEXT_PUBLIC_INSURED_LABEL ?? 'Licensed & Insured'
+  // No unverified licensing or insurance assertion in a shareable review preview.
+  const isPreview = process.env.VERCEL_ENV === 'preview'
 
   return (
     <footer className="border-t border-border bg-background">
@@ -28,7 +30,9 @@ export function Footer() {
             Pielaet Construction
           </p>
           <p className="text-sm text-muted-foreground">
-            {licenseNumber ? `${licenseLabel} #${licenseNumber} · ${insuredLabel}` : insuredLabel}
+            {isPreview
+              ? 'Private project review · Contractor credentials to be verified before publication'
+              : (licenseNumber ? `${licenseLabel} #${licenseNumber} · ${insuredLabel}` : insuredLabel)}
           </p>
           <p className="max-w-[42rem] text-sm text-muted-foreground">
             Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.

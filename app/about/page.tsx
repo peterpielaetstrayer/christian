@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+
+export const metadata: Metadata = {
+  title: 'About | Pielaet Construction & Design',
+  description: 'Learn about the structural carpentry, custom residential building, and craftsmanship behind Pielaet Construction & Design.',
+  alternates: { canonical: '/about' },
+}
 
 const coreFocus = [
   'Custom renovations + additions',

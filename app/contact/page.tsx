@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { ProcessBlock } from '@/components/process-section'
+
+export const metadata: Metadata = {
+  title: 'Contact | Pielaet Construction & Design',
+  description: 'Get in touch about a custom residential construction or carpentry project.',
+  alternates: { canonical: '/contact' },
+}
 
 export default function ContactPage() {
   const formAction = 'https://formsubmit.co/pielaetbuilt@gmail.com'

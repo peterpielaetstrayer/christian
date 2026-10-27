@@ -1,6 +1,12 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+
+export const metadata: Metadata = {
+  title: 'Message Sent | Pielaet Construction & Design',
+  robots: { index: false, follow: false },
+}
 
 export default function ContactThanksPage() {
   return (

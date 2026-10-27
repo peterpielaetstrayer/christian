@@ -16,6 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.pielaetconstruction.com'),
   title: 'Pielaet Construction & Design — Custom residential construction',
   description:
     'Custom residential construction, renovations, and structural work from Santa Barbara to Los Angeles.',

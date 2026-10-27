@@ -1,8 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { ProjectImage } from '@/components/project-image'
 import { getProjects } from '@/data/projects'
+
+export const metadata: Metadata = {
+  title: 'Work | Pielaet Construction & Design',
+  description: 'Selected residential projects documenting structural carpentry, complex framing, and precise details.',
+  alternates: { canonical: '/work' },
+}
 
 const projects = getProjects()
 
@@ -17,8 +24,8 @@ export default function WorkPage() {
             Work
           </h1>
           <p className="text-base leading-relaxed text-secondary sm:text-lg">
-            A selection of custom residential work—renovations, structural modifications, and detailed carpentry.
-            Built for long-term durability and clean finish alignment.
+            Selected residential work documenting complex framing, structural carpentry, and the details
+            that shape a finished space.
           </p>
         </div>
 

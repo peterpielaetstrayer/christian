@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
+
+export const metadata: Metadata = {
+  title: 'About | Pielaet Construction & Design',
+  description: 'Learn about the structural carpentry, custom residential building, and craftsmanship behind Pielaet Construction & Design.',
+  alternates: { canonical: '/about' },
+}
 
 const coreFocus = [
   'Custom renovations + additions',
@@ -25,8 +32,8 @@ export default function AboutPage() {
             <p className="text-base leading-relaxed text-foreground sm:text-lg">
               Pielaet Construction & Design is a California General B contractor focused on
               custom residential work—renovations, additions, and structural modifications.
-              We bring structural judgment and a design eye to the same problem: building
-              spaces that look right and perform for decades.
+              We bring together practical building expertise and a design eye, with attention
+              to how structure, proportion, and finish details work together.
             </p>
           </div>
         </section>

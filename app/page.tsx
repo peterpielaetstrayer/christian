@@ -12,6 +12,8 @@ export const metadata: Metadata = {
 }
 
 const featuredProjects = getFeaturedProjects()
+// Review navigation is only displayed on Vercel preview deployments.
+const isPhotoReviewPreview = process.env.VERCEL_ENV === 'preview'
 
 const capabilities = [
   'Code-compliant structural modifications',
@@ -28,6 +30,24 @@ export default function Home() {
       <Navigation />
       
       <main>
+        {isPhotoReviewPreview && (
+          <section aria-label="Preview changes" className="mx-auto max-w-7xl px-6 pt-6">
+            <div className="border border-border bg-muted/40 px-5 py-4 text-sm sm:px-6">
+              <p className="font-medium text-foreground">Photo review preview — October 2026</p>
+              <p className="mt-1 leading-relaxed text-secondary">
+                The homepage has intentionally not changed. Review the updated photography directly on these two project pages:
+              </p>
+              <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
+                <Link href="/work/custom-timber-framework" className="underline underline-offset-4 hover:text-accent">
+                  Revised Timber Framework photographs
+                </Link>
+                <Link href="/work/groin-vault-detail-work#gallery" className="underline underline-offset-4 hover:text-accent">
+                  Revised Groin Vault gallery
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
         {/* Hero Section */}
         <section className="mx-auto max-w-7xl px-6 pt-6 md:pt-10">
           <div className="relative">

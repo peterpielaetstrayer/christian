@@ -305,6 +305,7 @@ export const projects: Project[] = [
       "Site integration and roof overhang",
     ],
     gallery: makeGallery("outdoor-shed", [
+      "Outdoor structure photographed within the surrounding landscape",
     ]),
     result: "Construction photographs on file; exact role, project grouping and final conditions require client confirmation.",
     images: makeProjectImages("outdoor-shed", "Custom Outdoor Shed"),

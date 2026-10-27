@@ -1,4 +1,6 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { ProjectImage } from '@/components/project-image'
@@ -10,13 +12,35 @@ export async function generateStaticParams() {
 
 export const dynamicParams = true
 
-export default async function ProjectDetailPage({
-  params,
-}: {
+type ProjectRouteProps = {
   params: Promise<{ slug: string }>
-}) {
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectRouteProps): Promise<Metadata> {
   const { slug } = await params
   const project = getProjectBySlug(slug)
+
+  if (!project) return { title: 'Project not found' }
+
+  return {
+    title: `${project.title} | Pielaet Construction & Design`,
+    description: project.overview,
+    alternates: { canonical: `/work/${project.slug}` },
+    openGraph: {
+      title: `${project.title} | Pielaet Construction & Design`,
+      description: project.overview,
+      type: 'article',
+    },
+  }
+}
+
+export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
+  const { slug } = await params
+  const project = getProjectBySlug(slug)
+  if (!project) notFound()
+
   const projects = getProjects()
   const projectIndex = projects.findIndex((item) => item.slug === slug)
   const previousProject = projectIndex > 0 ? projects[projectIndex - 1] : null
@@ -27,38 +51,13 @@ export default async function ProjectDetailPage({
   ].filter(Boolean) as string[]
   const galleryItems = project?.gallery.filter((image) => image.src) ?? []
 
-  if (!project) {
-    return (
-      <>
-        <Navigation />
-        <main className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <div className="max-w-2xl">
-            <h1 className="mb-4 font-serif text-3xl text-foreground sm:text-4xl md:text-5xl">
-              Project not found
-            </h1>
-            <p className="mb-8 text-base leading-relaxed text-secondary sm:text-lg">
-              The project you’re looking for isn’t available.
-            </p>
-            <Link
-              href="/work"
-              className="text-sm tracking-wide text-foreground transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              Back to Work
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </>
-    )
-  }
-
   return (
     <>
       <Navigation />
       
       <main>
         {/* Hero */}
-        <section className="mx-auto max-w-7xl px-6 pt-6 md:pt-10 md:pt-12">
+        <section className="mx-auto max-w-7xl px-6 pt-6 md:pt-12">
           <div className="relative">
             <ProjectImage
               ratio="16/9"
@@ -140,7 +139,7 @@ export default async function ProjectDetailPage({
             {previousProject ? (
               <Link
                 href={`/work/${previousProject.slug}`}
-                className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 ← Previous: {previousProject.title}
               </Link>

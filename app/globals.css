@@ -17,13 +17,13 @@
   --secondary-foreground: #F6F4EF;
   --muted: #E6E2DA; /* subtle warm gray for dividers */
   --muted-foreground: #6B6B6B;
-  --accent: #8B7355; /* restrained bronze/wood tone */
+  --accent: #7D6549; /* restrained bronze/wood tone */
   --accent-foreground: #F6F4EF;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #F6F4EF;
   --border: #E6E2DA;
   --input: #E6E2DA;
-  --ring: #8B7355;
+  --ring: #7D6549;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);

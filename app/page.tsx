@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
@@ -5,6 +6,10 @@ import { ProjectImage } from '@/components/project-image'
 import { ProcessSection } from '@/components/process-section'
 import { homeHero } from '@/data/home'
 import { getFeaturedProjects } from '@/data/projects'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 const featuredProjects = getFeaturedProjects()
 

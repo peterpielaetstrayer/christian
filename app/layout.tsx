@@ -16,6 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  // Review deployments should never compete with the published domain in search.
+  robots: process.env.VERCEL_ENV === 'preview' ? { index: false, follow: false } : undefined,
   metadataBase: new URL('https://www.pielaetconstruction.com'),
   title: 'Pielaet Construction & Design — Custom residential construction',
   description:

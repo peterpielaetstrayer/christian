@@ -22,14 +22,51 @@ export type Project = {
   }
 }
 
+// Photo-specific descriptions make non-decorative portfolio imagery meaningful
+// without asserting unverified authorship, engineering, or final conditions.
+const photoDescriptions: Record<string, { hero: string; card: string }> = {
+  'barrel-vault-framing': {
+    hero: 'Exposed timber ribs forming a curved barrel vault ceiling during construction',
+    card: 'Curved roof and vault framing shown before finishes',
+  },
+  'custom-skylight-ceiling': {
+    hero: 'Timber-clad ceiling with skylight opening viewed from below',
+    card: 'Detailed skylight and timber ceiling surface',
+  },
+  'outdoor-structural-stair': {
+    hero: 'In-progress exterior timber stair at a residential building',
+    card: 'Framed structural stair and adjoining exterior construction',
+  },
+  'groin-vault-detail-work': {
+    hero: 'Intersecting vaulted timber framing down an unfinished interior passage',
+    card: 'Wood framing forming intersecting curved vaults',
+  },
+  'custom-timber-framework': {
+    hero: 'Residential wall and roof framing in progress',
+    card: 'Close view of roof framing and structural timber members',
+  },
+  'deck-pergola-build': {
+    hero: 'Residential exterior carpentry and outdoor structure photography',
+    card: 'Deck and pergola construction details',
+  },
+  'circular-arch-window': {
+    hero: 'Timber-framed curved arch opening under construction',
+    card: 'Architectural arch framing detail',
+  },
+  'outdoor-shed': {
+    hero: 'Timber-clad outdoor shed with exposed posts and an overhanging roof',
+    card: 'Small outdoor timber structure with horizontal siding and double doors',
+  },
+}
+
 const makeProjectImages = (slug: string, title: string) => ({
   hero: {
     src: `/images/projects/${slug}/hero.jpg`,
-    alt: `${title} — hero`,
+    alt: photoDescriptions[slug]?.hero ?? `${title} — construction view`,
   },
   card: {
     src: `/images/projects/${slug}/card.jpg`,
-    alt: `${title} — card`,
+    alt: photoDescriptions[slug]?.card ?? `${title} — construction detail`,
   },
 })
 

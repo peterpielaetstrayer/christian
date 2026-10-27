@@ -1,8 +1,15 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Footer } from '@/components/footer'
 import { ProjectImage } from '@/components/project-image'
 import { getProjects } from '@/data/projects'
+
+export const metadata: Metadata = {
+  title: 'Work | Pielaet Construction & Design',
+  description: 'Selected residential projects documenting structural carpentry, complex framing, and precise details.',
+  alternates: { canonical: '/work' },
+}
 
 const projects = getProjects()
 

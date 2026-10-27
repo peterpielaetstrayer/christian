@@ -1,57 +1,71 @@
 /**
- * Portfolio photo integrity audit — read-only.
+ * Read-only portfolio photo integrity audit.
  * Run: node scripts/audit-photo-assets.mjs [--json]
- * Source-photo matches do NOT verify project authorship or technical claims.
+ * Folder provenance does not establish the builder's role, job grouping, or code compliance.
  */
-import { readFileSync, readdirSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, resolve, relative } from 'node:path'
 import { createHash } from 'node:crypto'
 
 const root = resolve(import.meta.dirname, '..')
 const projectDir = join(root, 'public', 'images', 'projects')
-const source = readFileSync(join(root, 'data', 'projects.ts'), 'utf8')
-const slugs = [...source.matchAll(/\bslug:\s*'([^']+)'/g)].map(m => m[1])
-const extensions = /\.(jpe?g|png|webp|avif|gif)$/i
-
-const walk = dir => readdirSync(dir, { withFileTypes: true }).flatMap(item => {
-  const path = join(dir, item.name)
-  return item.isDirectory() ? walk(path) : extensions.test(path) ? [path] : []
+const code = readFileSync(join(root, 'data', 'projects.ts'), 'utf8')
+const sections = code.split(/(?=\n  \{\n    title:)/)
+const entries = sections.flatMap((part) => {
+  const slug = part.match(/\bslug:\s*['"]([^'"]+)['"]/)?.[1]
+  if (!slug) return []
+  const galleryText = part.match(/gallery:\s*makeGallery\(['"][^'"]+['"],\s*\[([\s\S]*?)\]\)/)?.[1] ?? ''
+  const galleryCount = (galleryText.match(/^\s*['"][^'"]+['"],?\s*$/gm) ?? []).length
+  return [{ slug, galleryCount, hold: /reviewStatus:\s*['"]hold['"]/.test(part) }]
 })
-const files = walk(projectDir).map(path => {
-  const data = readFileSync(path)
-  return {
-    path: relative(root, path).replaceAll('\\', '/'),
-    project: relative(projectDir, path).split(/[\\/]/)[0],
-    bytes: data.byteLength,
-    digest: createHash('sha256').update(data).digest('hex'),
-  }
+const active = entries.filter((item) => !item.hold)
+const imagePattern = /\.(jpe?g|png|webp|avif|gif)$/i
+const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((d) => {
+  const path = join(dir, d.name)
+  return d.isDirectory() ? walk(path) : imagePattern.test(path) ? [path] : []
 })
-const byDigest = Map.groupBy(files, f => f.digest)
-const crossProjectDuplicates = [...byDigest.values()]
-  .filter(g => g.length > 1 && new Set(g.map(f => f.project)).size > 1)
-  .map(g => g.map(f => f.path))
-const oversized = files.filter(f => f.bytes > 5 * 1024 * 1024)
-  .map(f => ({ path: f.path, mib: +(f.bytes / 1048576).toFixed(1) }))
-const folders = [...new Set(files.map(f => f.project))]
+const imageFiles = walk(projectDir).map((path) => ({
+  path: relative(root, path).replaceAll('\\', '/'),
+  project: relative(projectDir, path).split(/[\\/]/)[0],
+  bytes: statSync(path).size,
+  sha256: createHash('sha256').update(readFileSync(path)).digest('hex'),
+}))
+const allPaths = new Set(imageFiles.map((f) => f.path))
+const expected = active.flatMap((p) => [
+  `public/images/projects/${p.slug}/hero.jpg`,
+  `public/images/projects/${p.slug}/card.jpg`,
+  ...Array.from({ length: p.galleryCount }, (_, i) =>
+    `public/images/projects/${p.slug}/gallery-${String(i + 1).padStart(2, '0')}.jpg`),
+])
+const missingActiveImagePaths = expected.filter((p) => !allPaths.has(p))
+const visibleImages = imageFiles.filter((f) => active.some((p) => p.slug === f.project))
+const hashGroups = Map.groupBy(visibleImages, (f) => f.sha256)
+const reusedActiveImageGroups = [...hashGroups.values()]
+  .filter((g) => new Set(g.map((f) => f.project)).size > 1)
+  .map((g) => g.map((f) => f.path))
+const oversized = visibleImages.filter((f) => f.bytes > 5 * 1048576)
+  .map((f) => ({ path: f.path, mib: +(f.bytes / 1048576).toFixed(1) }))
+const hero = join(root, 'public', 'images', 'home', 'hero.jpg')
 const result = {
-  declaredProjects: slugs.length,
-  projectImageFiles: files.length,
-  crossProjectDuplicates,
+  candidateEntries: entries.length,
+  visibleStudies: active.length,
+  heldForAttribution: entries.filter((item) => item.hold).map((x) => x.slug),
+  expectedVisibleImages: expected.length,
+  missingActiveImagePaths,
+  reusedActiveImageGroups,
   oversized,
-  missingProjectImageFolders: slugs.filter(x => !folders.includes(x)),
-  imageFoldersOutsideProjectList: folders.filter(x => !slugs.includes(x)),
+  homeHeroMiB: existsSync(hero) ? +(statSync(hero).size / 1048576).toFixed(2) : null,
 }
-if (process.argv.includes('--json')) {
-  console.log(JSON.stringify(result, null, 2))
-} else {
-  console.log(`Projects: ${result.declaredProjects}; image files: ${result.projectImageFiles}`)
-  console.log(`Duplicate image groups across project categories: ${crossProjectDuplicates.length}`)
-  crossProjectDuplicates.forEach((g, i) => console.log(`  ${i + 1}: ${g.join(' == ')}`))
-  console.log(`Assets larger than 5 MiB: ${oversized.length}`)
-  oversized.forEach(f => console.log(`  ${f.mib} MiB: ${f.path}`))
-  if (result.missingProjectImageFolders.length)
-    console.log(`Missing image folders: ${result.missingProjectImageFolders.join(', ')}`)
-  if (result.imageFoldersOutsideProjectList.length)
-    console.log(`Unlisted image folders: ${result.imageFoldersOutsideProjectList.join(', ')}`)
-  console.log('Review image reuse before publication. This does not verify authorship, roles, or licensure.')
+if (process.argv.includes('--json')) console.log(JSON.stringify(result, null, 2))
+else {
+  console.log(`Portfolio: ${result.visibleStudies} visible studies, ${result.heldForAttribution.length} held for review`)
+  console.log(`Referenced image paths: ${expected.length}; missing: ${missingActiveImagePaths.length}`)
+  missingActiveImagePaths.forEach((p) => console.log(`  MISSING ${p}`))
+  console.log(`Cross-study identical photo groups: ${reusedActiveImageGroups.length}`)
+  reusedActiveImageGroups.forEach((g) => console.log(`  DUPLICATE ${g.join(' = ')}`))
+  console.log(`Large source images > 5 MiB: ${oversized.length}`)
+  oversized.forEach((f) => console.log(`  ${f.mib} MiB: ${f.path}`))
+  console.log(`Homepage hero: ${result.homeHeroMiB} MiB`)
+  console.log('Photo integrity does not verify authorship, permitted publication, or licensing.')
 }
+if (missingActiveImagePaths.length || reusedActiveImageGroups.length) process.exitCode = 1

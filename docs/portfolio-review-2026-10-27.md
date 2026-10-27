@@ -5,15 +5,17 @@
 **Photo archive:** [Website Photos](https://drive.google.com/drive/folders/1kmE3vimOxvuvk7H5SdBO7_D0YeQcWbeg)  
 **Source direction:** *Craft, Direction & Site Foundation*; contractor identity first, design capability second; architectural, precise, clean, modern, craft-forward. Keep the approved minimalist layout.
 
-## REQUIRED APPROVAL GATE — PHOTO FREEZE
+## UPDATED WORKFLOW — CURATE, PREVIEW, REACT, REFINE
 
-**Hard stop:** No changes to the images currently used on the website, project image assignments, photo order, hero images, galleries, or number/identity of published projects until Peter and Christian review the **one-page six-photo shortlist together**. The six photos are *discussion candidates*, not approved replacements. This applies to future pull requests as well as the current quality-review branch.
+**Current direction (clarified by Peter):** The one-page shortlist is **optional**, not a prerequisite for making photographic improvements. Our job is to use the existing large Drive archive and proactively select the best evidenced project photos. We can stage image and gallery adjustments immediately on a separate preview branch and show Christian the improved website. Do not put inaccurate or unverified project-photo associations into production; obtain Christian's lightweight reaction and scope/role confirmation before publication.
 
-The first decision session should be short and visual, ideally a screen-share using the one-page shortlist. Christian chooses which **real jobs** best represent his craftsmanship and desired future work, confirms which photos actually belong together, identifies his role, and approves public usage. Only afterward should we form a proposed image map and a reviewable preview; **no photo changes should be merged or published before approval**.
+**Photos may change in a nonproduction preview without an advance meeting.** Keep `main` and the actual production website unchanged pending review. Distinguish two kinds of decision:
+1. **Curatorial / technical:** crop, visual quality, avoid obvious reuse, prefer folder-coherent candidate images; we can propose these and test them immediately on a preview.
+2. **Historical / factual:** what exact job an image documents, his actual responsibility, whether multiple images belong to the same job, permissions, licensing and outcomes; Christian's confirmation is needed before the final published story.
 
-**Long-term approved publication strategy:** Keep the approved warm architectural minimalism and builder/craftsperson-first identity. Aim for **3–6 excellent, real featured project stories** at launch, showing a range of desired work with one accurate hero plus a few coherent supporting photographs each. Treat generic strengths as capabilities rather than fictional stand-alone jobs. A broader categorized project archive is a later phase, not a prerequisite. After the review and image selections, optimize images, refine only substantiated copy, run accessibility/mobile/contact/license checks, and request final approval before production.
+**Effortless response:** Send a preview link by text: "I refreshed the photos using what you already shared. Can you take a look and tell me what feels right, what you'd change, and if anything is from a different job?" Ask only for *specific* missing shots after this. If he has more, give him a one-link, no-account file-request workflow that accepts multiple phone photos; transfer new arrivals into the canonical Drive archive later.
 
-**Minimize work for Christian:** Do not ask him to bulk-sort phone photos, create Drive categories, rename files, or write case studies. Bring a clear shortlist; only request specific missing images afterward, which can be sent by text.
+**Long-term approved direction:** Keep the warm, architectural, minimalist design and builder/craftsperson-first positioning. Aim for 3–6 excellent *real* featured jobs at launch with one compelling hero, concise verified role/scope, and coherent gallery photos; shift general abilities into capabilities rather than fictional jobs. Expand the archive later.
 
 ## Decision rule
 

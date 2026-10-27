@@ -20,8 +20,9 @@ export default function WorkPage() {
       
       <main className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="mb-12 max-w-3xl md:mb-16">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">Portfolio / Selected Studies</p>
           <h1 className="mb-5 font-serif text-3xl text-foreground sm:text-4xl md:mb-6 md:text-5xl">
-            Work
+            The work, up close.
           </h1>
           <p className="text-base leading-relaxed text-secondary sm:text-lg">
             Selected residential work documenting complex framing, structural carpentry, and the details
@@ -44,12 +45,10 @@ export default function WorkPage() {
                 className="transition-opacity group-hover:opacity-90"
               />
               <div className="mt-5 space-y-2">
+                <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">{project.role}</p>
                 <h2 className="font-serif text-lg text-foreground transition-colors group-hover:text-accent sm:text-xl">
                   {project.title}
                 </h2>
-                <p className="text-sm text-muted-foreground">
-                  {project.role}
-                </p>
                 <p className="text-sm text-secondary">
                   {project.focus}
                 </p>

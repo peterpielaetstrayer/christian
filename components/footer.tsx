@@ -1,7 +1,7 @@
 export function Footer() {
   const licenseNumber = process.env.NEXT_PUBLIC_LICENSE_NUMBER ?? '1153030'
   const licenseLabel = process.env.NEXT_PUBLIC_LICENSE_LABEL ?? 'CA CSLB'
-  const insuredLabel = process.env.NEXT_PUBLIC_INSURED_LABEL ?? 'Licensed & Insured'
+  // Liability-insurance wording is omitted until current coverage is verified.
   // No unverified licensing or insurance assertion in a shareable review preview.
   const isPreview = process.env.VERCEL_ENV === 'preview'
 
@@ -30,9 +30,16 @@ export function Footer() {
             Pielaet Construction
           </p>
           <p className="text-sm text-muted-foreground">
-            {isPreview
-              ? 'Private project review · Contractor credentials to be verified before publication'
-              : (licenseNumber ? `${licenseLabel} #${licenseNumber} · ${insuredLabel}` : insuredLabel)}
+            {isPreview ? (
+              'Private project review · Contractor credentials to be verified before publication'
+            ) : licenseNumber ? (
+              <a href="https://www.cslb.ca.gov/onlineservices/checklicenseII/CheckLicense.aspx"
+                target="_blank" rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-accent"
+                aria-label={`Verify California contractor license number ${licenseNumber} with CSLB`}>
+                {`${licenseLabel} #${licenseNumber}`}
+              </a>
+            ) : null}
           </p>
           <p className="max-w-[42rem] text-sm text-muted-foreground">
             Serving Santa Barbara to Los Angeles. Larger jobs negotiable outside the area.

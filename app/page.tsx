@@ -165,7 +165,7 @@ export default function Home() {
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 <a
                   href="tel:+18056513637"
-                  className="min-h-11 py-2 text-base text-secondary transition-colors hover:text-accent sm:text-lg"
+                  className="min-h-11 py-2 text-base text-secondary underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                 >
                   Call / Text
                 </a>
@@ -174,14 +174,14 @@ export default function Home() {
                   href="mailto:pielaetbuilt@gmail.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="min-h-11 py-2 text-base text-secondary transition-colors hover:text-accent sm:text-lg"
+                  className="min-h-11 py-2 text-base text-secondary underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                 >
                   Email
                 </a>
                 <span className="text-muted-foreground">·</span>
                 <Link
                   href="/contact"
-                  className="min-h-11 py-2 text-base text-secondary transition-colors hover:text-accent sm:text-lg"
+                  className="min-h-11 py-2 text-base text-secondary underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                 >
                   Contact
                 </Link>

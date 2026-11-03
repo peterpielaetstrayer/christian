@@ -35,7 +35,7 @@ export default function Home() {
             <div className="border border-border bg-muted/40 px-5 py-4 text-sm sm:px-6">
               <p className="font-medium text-foreground">Contrast & readability polish — November 2026</p>
               <p className="mt-1 leading-relaxed text-secondary">
-                This is a private typography and accessibility review. The portfolio and overall visual language are unchanged; compare the stronger hero text contrast, clearer buttons, and more readable supporting text.
+                This draft protects the custom wooden walkway: the photograph leads on mobile, the words sit on a solid dark surface below, and a left-side gradient safeguards text on desktop. Supporting typography and buttons retain the earlier accessibility refinements.
               </p>
               <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
                 <Link href="/work" className="underline underline-offset-4 hover:text-accent">
@@ -51,29 +51,37 @@ export default function Home() {
             </div>
           </section>
         )}
-        {/* Hero Section */}
+        {/* Homepage hero: keep the walkway unobstructed on small screens.
+            At desktop sizes, text sits over a dedicated left-side gradient. */}
         <section className="mx-auto max-w-7xl px-6 pt-6 md:pt-10">
-          <div className="relative">
+          <div className="relative overflow-hidden bg-foreground">
             <ProjectImage
               ratio="16/9"
               src={homeHero.src}
               alt={homeHero.alt}
               priority
               sizes="(min-width: 1024px) 80vw, 100vw"
-              className="min-h-[560px] sm:min-h-[500px] md:min-h-[520px]"
-              overlay="soft"
+              className="aspect-[3/4] sm:aspect-square lg:aspect-[16/9] lg:min-h-[580px]"
+              imageClassName="object-center lg:object-[50%_62%]"
+              overlay="none"
             />
-            <div className="absolute inset-0 flex items-end justify-center px-5 pb-8 sm:px-8 sm:pb-10 md:pb-16">
-              <div className="mx-auto w-full max-w-4xl text-center [text-shadow:0_2px_14px_rgba(0,0,0,0.30)]">
-                <h1 className="font-serif text-[2rem] leading-[1.12] text-white sm:text-5xl sm:leading-[1.08] md:text-6xl lg:text-7xl">
+            {/* No text over the walkway on mobile/tablet. On desktop the veil is
+                concentrated on the left, leaving the central timber pathway visible. */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 hidden lg:block bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.78)_38%,rgba(0,0,0,0.62)_59%,rgba(0,0,0,0.14)_80%,rgba(0,0,0,0.03)_100%)]"
+            />
+            <div className="relative z-10 bg-foreground px-6 py-9 text-center sm:px-9 sm:py-12 lg:absolute lg:inset-0 lg:flex lg:items-center lg:bg-transparent lg:px-12 lg:py-12 lg:text-left xl:px-16">
+              <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-[52%] lg:[text-shadow:0_2px_14px_rgba(0,0,0,0.25)]">
+                <h1 className="font-serif text-[2rem] leading-[1.12] text-white sm:text-5xl lg:text-[3rem] lg:leading-[1.1] xl:text-[3.5rem]">
                   Custom residential construction
                   <br />
                   with a structural backbone.
                 </h1>
-                <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-white/95 sm:mt-5 sm:text-lg md:mt-6 md:text-xl">
+                <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-white/95 sm:mt-5 sm:text-lg lg:mx-0 lg:mt-6">
                   Custom renovations, additions, and structural carpentry, with careful planning and attention to the details that last.
                 </p>
-                <div className="mx-auto mt-6 flex w-full max-w-xs flex-col items-stretch gap-3 sm:mt-7 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:mt-9">
+                <div className="mx-auto mt-6 flex w-full max-w-xs flex-col items-stretch gap-3 sm:mt-7 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:mx-0 lg:justify-start">
                   <Link
                     href="/contact"
                     className="inline-flex min-h-12 items-center justify-center border border-white bg-white px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-7 sm:text-base"

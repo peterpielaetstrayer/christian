@@ -71,7 +71,7 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
+                  className="w-full border-b border-input bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                   placeholder="Your name"
                   required
                 />
@@ -85,7 +85,7 @@ export default function ContactPage() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
+                  className="w-full border-b border-input bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                   placeholder="your.email@example.com"
                   required
                 />
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   rows={6}
-                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none sm:text-lg"
+                  className="w-full resize-none border-b border-input bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                   placeholder="Describe your project, share scope details, or ask a question..."
                   required
                 />
@@ -107,7 +107,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full border border-foreground bg-transparent px-8 py-3 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto"
+                className="inline-flex min-h-12 w-full items-center justify-center border border-foreground bg-foreground px-8 py-3 text-sm font-semibold text-background transition-colors hover:border-accent hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:w-auto"
               >
                 Send
               </button>

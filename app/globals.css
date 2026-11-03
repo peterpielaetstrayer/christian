@@ -13,16 +13,16 @@
   --popover-foreground: #1F1F1F;
   --primary: #1F1F1F;
   --primary-foreground: #F6F4EF;
-  --secondary: #6B6B6B; /* muted warm gray */
+  --secondary: #5C5954; /* readable warm charcoal, 6.34:1 on paper */
   --secondary-foreground: #F6F4EF;
   --muted: #E6E2DA; /* subtle warm gray for dividers */
-  --muted-foreground: #6B6B6B;
+  --muted-foreground: #615E58; /* quieter but readable, 5.88:1 on paper */
   --accent: #7D6549; /* restrained bronze/wood tone */
   --accent-foreground: #F6F4EF;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #F6F4EF;
   --border: #E6E2DA;
-  --input: #E6E2DA;
+  --input: #8D8479; /* form-field underline, 3.35:1 against background */
   --ring: #7D6549;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -74,6 +74,10 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  :where(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
   }
 }
 

@@ -12,6 +12,7 @@ type ProjectImageProps = {
   priority?: boolean
   overlay?: 'none' | 'soft'
   className?: string
+  imageClassName?: string
 }
 
 const ratioClassMap: Record<NonNullable<ProjectImageProps['ratio']>, string> = {
@@ -27,6 +28,7 @@ export function ProjectImage({
   priority = false,
   overlay = 'none',
   className,
+  imageClassName,
 }: ProjectImageProps) {
   const ratioClass = ratioClassMap[ratio]
   const showOverlay = overlay !== 'none'
@@ -56,7 +58,7 @@ export function ProjectImage({
         fill
         priority={priority}
         sizes={sizes}
-        className="object-cover"
+        className={cn("object-cover", imageClassName)}
         onError={() => setHasError(true)}
       />
       {showOverlay ? (

@@ -26,3 +26,13 @@
 - If the stronger gradient is visually too dark on real devices, alternative A: a more localized vignette behind the title/body; alternative B: a translucent text scrim or a caption below the photograph. Do not claim AA until the selected treatment is actually tested against mobile/desktop screenshot pixels.
 
 WCAG criteria: https://www.w3.org/WAI/WCAG22/#contrast-minimum and https://www.w3.org/WAI/WCAG22/#non-text-contrast
+
+## Mobile hero revision — overlay restored
+
+The initial attempt to preserve the central wooden walkway placed mobile copy on a separate charcoal section. After viewing it on a phone, the user requested that the heading **remain over the image**. The current preview restores the absolute overlay on mobile and keeps the image and words within a single visual hero.
+
+- Mobile photo uses an approximately 740px-tall image area on narrow screens, easing to ~660px on medium devices. The photo remains center-focused so the wooden walkway runs down the frame.
+- The words sit near the **top** of the photo; an unboxed top-to-bottom dark gradient is strong at the upper text position and fades out by 78% height, preserving the lower timber foreground.
+- Desktop retains the existing left-to-right, text-side dark gradient and left-aligned overlay.
+- The image itself and the copy are unchanged. This is **not** a separate caption panel, and it is **not** an assertion that every responsive image-and-text combination has been screenshot-tested to WCAG AA.
+- Review specifically at 320px, 375px, 430px and common desktop widths. Verify no text/button clipping, that the foreground walkway is clearly visible, and that white text sits over sufficiently dark pixels throughout the mobile content block. A browser-based contrast check is still required before claiming photo-overlay WCAG conformance.

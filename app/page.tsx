@@ -35,7 +35,7 @@ export default function Home() {
             <div className="border border-border bg-muted/40 px-5 py-4 text-sm sm:px-6">
               <p className="font-medium text-foreground">Contrast & readability polish — November 2026</p>
               <p className="mt-1 leading-relaxed text-secondary">
-                This draft keeps the headline over the image on mobile, with a localized dark gradient protecting the words at the top and the wooden walkway remaining visible below. Desktop retains its left-side text treatment, and the earlier typography refinements remain intact.
+                The mobile hero now uses shorter craft-focused copy, one modest primary action, and a lighter upper gradient, keeping more of the wooden walkway visible. Desktop typography and layout are unchanged.
               </p>
               <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
                 <Link href="/work" className="underline underline-offset-4 hover:text-accent">
@@ -62,36 +62,56 @@ export default function Home() {
               alt={homeHero.alt}
               priority
               sizes="(min-width: 1024px) 80vw, 100vw"
-              className="h-[740px] sm:h-[700px] md:h-[660px] lg:h-auto lg:min-h-[580px]"
+              className="h-[640px] sm:h-[650px] md:h-[660px] lg:h-auto lg:min-h-[580px]"
               imageClassName="object-[50%_56%] sm:object-[50%_62%] lg:object-[50%_62%]"
               overlay="none"
             />
-            {/* The mobile scrim sits behind text near the top, fading away before
-                the lower foreground walkway. Desktop retains the left-side veil. */}
+            {/* A shorter mobile text block and upper vignette preserve the timber walkway.
+                Desktop retains the established left-side hero composition. */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.86)_28%,rgba(0,0,0,0.74)_44%,rgba(0,0,0,0.18)_65%,rgba(0,0,0,0)_78%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.78)_38%,rgba(0,0,0,0.62)_59%,rgba(0,0,0,0.14)_80%,rgba(0,0,0,0.03)_100%)]"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.74)_24%,rgba(0,0,0,0.56)_39%,rgba(0,0,0,0.20)_51%,rgba(0,0,0,0)_64%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.78)_38%,rgba(0,0,0,0.62)_59%,rgba(0,0,0,0.14)_80%,rgba(0,0,0,0.03)_100%)]"
             />
             <div className="absolute inset-0 z-10 flex items-start justify-center px-5 pt-9 text-center sm:px-9 sm:pt-12 md:pt-14 lg:items-center lg:justify-start lg:px-12 lg:py-12 lg:text-left xl:px-16">
-              <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-[52%] lg:[text-shadow:0_2px_14px_rgba(0,0,0,0.25)]">
+              <div className="mx-auto max-w-2xl [text-shadow:0_2px_14px_rgba(0,0,0,0.40)] lg:mx-0 lg:max-w-[52%] lg:[text-shadow:0_2px_14px_rgba(0,0,0,0.25)]">
                 <h1 className="font-serif text-[2rem] leading-[1.12] text-white sm:text-5xl lg:text-[3rem] lg:leading-[1.1] xl:text-[3.5rem]">
-                  Custom residential construction
-                  <br />
-                  with a structural backbone.
+                  <span className="lg:hidden">Custom construction.
+                    <span className="block">From frame to finish.</span>
+                  </span>
+                  <span className="hidden lg:inline">
+                    Custom residential construction
+                    <br />
+                    with a structural backbone.
+                  </span>
                 </h1>
-                <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-white/95 sm:mt-5 sm:text-lg lg:mx-0 lg:mt-6">
-                  Custom renovations, additions, and structural carpentry, with careful planning and attention to the details that last.
+                <p className="mx-auto mt-3 max-w-[23rem] text-[0.95rem] leading-relaxed text-white sm:mt-5 sm:text-lg lg:mx-0 lg:mt-6 lg:max-w-[34rem]">
+                  <span className="lg:hidden">Complex framing, considered details, and custom residential work.</span>
+                  <span className="hidden lg:inline">Custom renovations, additions, and structural carpentry, with careful planning and attention to the details that last.</span>
                 </p>
-                <div className="mx-auto mt-6 flex w-full max-w-xs flex-col items-stretch gap-3 sm:mt-7 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:mx-0 lg:justify-start">
+                <div className="mx-auto mt-5 flex max-w-[21rem] items-center justify-center gap-5 sm:mt-7 lg:hidden">
+                  <Link
+                    href="/work"
+                    className="inline-flex min-h-12 items-center justify-center border border-white bg-white px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                  >
+                    View the work
+                  </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex min-h-12 items-center justify-center border border-white bg-white px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-7 sm:text-base"
+                    className="inline-flex min-h-12 items-center justify-center text-sm font-semibold text-white underline decoration-white/70 underline-offset-4 transition-colors hover:decoration-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                  >
+                    Get in touch
+                  </Link>
+                </div>
+                <div className="mt-9 hidden flex-wrap items-center justify-start gap-3 lg:flex">
+                  <Link
+                    href="/contact"
+                    className="inline-flex min-h-12 items-center justify-center border border-white bg-white px-7 py-3 text-base font-semibold text-foreground transition-colors hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                   >
                     Start with the scope
                   </Link>
                   <a
                     href="tel:+18056513637"
-                    className="inline-flex min-h-12 items-center justify-center border border-white/90 bg-black/45 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-black/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-7 sm:text-base"
+                    className="inline-flex min-h-12 items-center justify-center border border-white/90 bg-black/45 px-7 py-3 text-base font-semibold text-white transition-colors hover:bg-black/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                   >
                     Call / Text
                   </a>

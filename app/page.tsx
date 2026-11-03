@@ -35,7 +35,7 @@ export default function Home() {
             <div className="border border-border bg-muted/40 px-5 py-4 text-sm sm:px-6">
               <p className="font-medium text-foreground">Contrast & readability polish — November 2026</p>
               <p className="mt-1 leading-relaxed text-secondary">
-                This draft protects the custom wooden walkway: the photograph leads on mobile, the words sit on a solid dark surface below, and a left-side gradient safeguards text on desktop. Supporting typography and buttons retain the earlier accessibility refinements.
+                This draft keeps the headline over the image on mobile, with a localized dark gradient protecting the words at the top and the wooden walkway remaining visible below. Desktop retains its left-side text treatment, and the earlier typography refinements remain intact.
               </p>
               <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
                 <Link href="/work" className="underline underline-offset-4 hover:text-accent">
@@ -51,8 +51,9 @@ export default function Home() {
             </div>
           </section>
         )}
-        {/* Homepage hero: keep the walkway unobstructed on small screens.
-            At desktop sizes, text sits over a dedicated left-side gradient. */}
+        {/* Homepage hero: the copy overlays the image on every screen.
+            A top-focused mobile gradient protects text while leaving the
+            wooden walkway visible lower in the frame. */}
         <section className="mx-auto max-w-7xl px-6 pt-6 md:pt-10">
           <div className="relative overflow-hidden bg-foreground">
             <ProjectImage
@@ -61,17 +62,17 @@ export default function Home() {
               alt={homeHero.alt}
               priority
               sizes="(min-width: 1024px) 80vw, 100vw"
-              className="aspect-[3/4] sm:aspect-square lg:aspect-[16/9] lg:min-h-[580px]"
-              imageClassName="object-center lg:object-[50%_62%]"
+              className="h-[740px] sm:h-[700px] md:h-[660px] lg:h-auto lg:min-h-[580px]"
+              imageClassName="object-[50%_56%] sm:object-[50%_62%] lg:object-[50%_62%]"
               overlay="none"
             />
-            {/* No text over the walkway on mobile/tablet. On desktop the veil is
-                concentrated on the left, leaving the central timber pathway visible. */}
+            {/* The mobile scrim sits behind text near the top, fading away before
+                the lower foreground walkway. Desktop retains the left-side veil. */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 hidden lg:block bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.78)_38%,rgba(0,0,0,0.62)_59%,rgba(0,0,0,0.14)_80%,rgba(0,0,0,0.03)_100%)]"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.86)_28%,rgba(0,0,0,0.74)_44%,rgba(0,0,0,0.18)_65%,rgba(0,0,0,0)_78%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.86)_0%,rgba(0,0,0,0.78)_38%,rgba(0,0,0,0.62)_59%,rgba(0,0,0,0.14)_80%,rgba(0,0,0,0.03)_100%)]"
             />
-            <div className="relative z-10 bg-foreground px-6 py-9 text-center sm:px-9 sm:py-12 lg:absolute lg:inset-0 lg:flex lg:items-center lg:bg-transparent lg:px-12 lg:py-12 lg:text-left xl:px-16">
+            <div className="absolute inset-0 z-10 flex items-start justify-center px-5 pt-9 text-center sm:px-9 sm:pt-12 md:pt-14 lg:items-center lg:justify-start lg:px-12 lg:py-12 lg:text-left xl:px-16">
               <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-[52%] lg:[text-shadow:0_2px_14px_rgba(0,0,0,0.25)]">
                 <h1 className="font-serif text-[2rem] leading-[1.12] text-white sm:text-5xl lg:text-[3rem] lg:leading-[1.1] xl:text-[3.5rem]">
                   Custom residential construction

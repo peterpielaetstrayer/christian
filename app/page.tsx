@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const featuredProjects = getFeaturedProjects()
 // Review navigation is only displayed on Vercel preview deployments.
-const isPhotoReviewPreview = process.env.VERCEL_ENV === 'preview'
+const isContrastReviewPreview = process.env.VERCEL_ENV === 'preview'
 
 const capabilities = [
   'Code-compliant structural modifications',
@@ -30,22 +30,22 @@ export default function Home() {
       <Navigation />
       
       <main>
-        {isPhotoReviewPreview && (
+        {isContrastReviewPreview && (
           <section aria-label="Preview changes" className="mx-auto max-w-7xl px-6 pt-6">
             <div className="border border-border bg-muted/40 px-5 py-4 text-sm sm:px-6">
-              <p className="font-medium text-foreground">Portfolio curation preview — October 2026</p>
+              <p className="font-medium text-foreground">Contrast & readability polish — November 2026</p>
               <p className="mt-1 leading-relaxed text-secondary">
-                This private draft now presents eight photo-supported studies, with six featured below. The three entries using recycled project imagery have been held for verification. Start with the full work index or inspect the newly curated studies:
+                This is a private typography and accessibility review. The portfolio and overall visual language are unchanged; compare the stronger hero text contrast, clearer buttons, and more readable supporting text.
               </p>
               <div className="mt-3 flex flex-wrap gap-x-7 gap-y-2">
                 <Link href="/work" className="underline underline-offset-4 hover:text-accent">
-                  View all eight studies
+                  Review smaller portfolio text
                 </Link>
-                <Link href="/work/circular-arch-window" className="underline underline-offset-4 hover:text-accent">
-                  Architectural Arches
+                <Link href="/work/barrel-vault-framing" className="underline underline-offset-4 hover:text-accent">
+                  Work detail example
                 </Link>
-                <Link href="/work/outdoor-shed" className="underline underline-offset-4 hover:text-accent">
-                  Custom Outdoor Shed
+                <Link href="/contact" className="underline underline-offset-4 hover:text-accent">
+                  View contact and form
                 </Link>
               </div>
             </div>
@@ -60,29 +60,29 @@ export default function Home() {
               alt={homeHero.alt}
               priority
               sizes="(min-width: 1024px) 80vw, 100vw"
-              className="min-h-[420px] sm:min-h-[460px] md:min-h-[520px]"
+              className="min-h-[560px] sm:min-h-[500px] md:min-h-[520px]"
               overlay="soft"
             />
-            <div className="absolute inset-0 flex items-end justify-center pb-10 md:pb-16">
-              <div className="mx-auto max-w-4xl text-center">
-                <h1 className="font-serif text-4xl leading-[1.08] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <div className="absolute inset-0 flex items-end justify-center px-5 pb-8 sm:px-8 sm:pb-10 md:pb-16">
+              <div className="mx-auto w-full max-w-4xl text-center [text-shadow:0_2px_14px_rgba(0,0,0,0.30)]">
+                <h1 className="font-serif text-[2rem] leading-[1.12] text-white sm:text-5xl sm:leading-[1.08] md:text-6xl lg:text-7xl">
                   Custom residential construction
                   <br />
                   with a structural backbone.
                 </h1>
-                <p className="mx-auto mt-5 max-w-[34rem] text-base leading-relaxed text-white/80 sm:text-lg md:mt-6 md:text-xl">
+                <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-white/95 sm:mt-5 sm:text-lg md:mt-6 md:text-xl">
                   Custom renovations, additions, and structural carpentry, with careful planning and attention to the details that last.
                 </p>
-                <div className="mx-auto mt-7 flex flex-wrap items-center justify-center gap-3 md:mt-9">
+                <div className="mx-auto mt-6 flex w-full max-w-xs flex-col items-stretch gap-3 sm:mt-7 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center md:mt-9">
                   <Link
                     href="/contact"
-                    className="min-h-11 border border-white/85 bg-white/95 px-6 py-2 text-sm font-medium text-foreground transition-colors hover:bg-white sm:px-7 sm:text-base"
+                    className="inline-flex min-h-12 items-center justify-center border border-white bg-white px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-7 sm:text-base"
                   >
                     Start with the scope
                   </Link>
                   <a
                     href="tel:+18056513637"
-                    className="min-h-11 border border-white/55 bg-transparent px-6 py-2 text-sm font-medium text-white/90 transition-colors hover:border-white/85 hover:text-white sm:px-7 sm:text-base"
+                    className="inline-flex min-h-12 items-center justify-center border border-white/90 bg-black/45 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-black/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-7 sm:text-base"
                   >
                     Call / Text
                   </a>

@@ -71,7 +71,7 @@ export default function ContactPage() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
+                  className="w-full border-b border-input bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                   placeholder="Your name"
                   required
                 />
@@ -85,7 +85,7 @@ export default function ContactPage() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
+                  className="w-full border-b border-input bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                   placeholder="your.email@example.com"
                   required
                 />
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   id="message"
                   name="message"
                   rows={6}
-                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
+                  className="w-full resize-none border-b border-input bg-transparent px-0 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:text-lg"
                   placeholder="Describe your project, share scope details, or ask a question..."
                   required
                 />

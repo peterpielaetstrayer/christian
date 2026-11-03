@@ -1,4 +1,4 @@
 export const homeHero = {
   src: '/images/home/hero.jpg',
-  alt: 'Residential deck and pergola construction',
+  alt: 'Custom wooden walkway through a planted residential garden leading toward a shaded entry',
 } as const

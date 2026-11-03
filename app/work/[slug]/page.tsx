@@ -69,11 +69,11 @@ export default async function ProjectDetailPage({ params }: ProjectRouteProps) {
               className="min-h-[310px] sm:min-h-[420px] md:min-h-[500px]"
             />
             <div className="absolute inset-0 flex items-end justify-start pb-8 md:pb-12">
-              <div className="max-w-2xl px-6 text-left">
-                <h1 className="font-serif text-3xl leading-[1.08] text-white sm:text-4xl md:text-5xl">
+              <div className="max-w-2xl px-6 text-left [text-shadow:0_2px_14px_rgba(0,0,0,0.30)]">
+                <h1 className="font-serif text-3xl leading-[1.12] text-white sm:text-4xl sm:leading-[1.08] md:text-5xl">
                   {project.title}
                 </h1>
-                <div className="mt-4 space-y-1 text-sm text-white/80">
+                <div className="mt-4 space-y-1 text-sm font-medium leading-relaxed text-white/95">
                   <p>Discipline — {project.role}</p>
                   <p>Focus — {project.focus}</p>
                 </div>

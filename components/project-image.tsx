@@ -60,7 +60,7 @@ export function ProjectImage({
         onError={() => setHasError(true)}
       />
       {showOverlay ? (
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.64)_30%,rgba(0,0,0,0.76)_70%,rgba(0,0,0,0.82)_100%)]" />
       ) : null}
     </div>
   )

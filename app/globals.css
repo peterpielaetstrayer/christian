@@ -22,7 +22,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #F6F4EF;
   --border: #E6E2DA;
-  --input: #E6E2DA;
+  --input: #8D8479; /* form-field underline, 3.35:1 against background */
   --ring: #7D6549;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
